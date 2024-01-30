@@ -1,6 +1,7 @@
 package com.soulcode.soulnews.models;
 
 import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
@@ -15,8 +16,9 @@ import lombok.Setter;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-public class NoticiasDepois {
-	
+@Entity
+public class NoticiaDepois {
+
 	@EmbeddedId
 	private NoticiaDepoisId noticiaDepoisId;
 
