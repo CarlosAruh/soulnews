@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.soulcode.soulnews.models.Noticia;
@@ -18,18 +17,11 @@ public class NoticiaController {
 	private NoticiaRepository noticiaRepository;
 
 	@GetMapping("/noticias")
-	public ModelAndView paginaNoticias(@RequestParam(name = "assunto", required = false) Integer idAssunto) {
-	    List<Noticia> noticias;
+	public ModelAndView paginaNoticias() {
+		List<Noticia> noticias = noticiaRepository.findAll();
 
-	    if (idAssunto != null) {
-	        noticias = noticiaRepository.findByFkAssuntoId(idAssunto);
-	    } else {
-	        noticias = noticiaRepository.findAll();
-	    }
-
-	    ModelAndView mv = new ModelAndView("noticias");
-	    mv.addObject("listaNoticias", noticias);
-	    return mv;
+		ModelAndView mv = new ModelAndView("clientes");
+		mv.addObject("listaNoticias", noticias);
+		return mv;
 	}
-
 }
