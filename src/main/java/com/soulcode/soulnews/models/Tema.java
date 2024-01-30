@@ -1,7 +1,5 @@
 package com.soulcode.soulnews.models;
 
-import java.time.Instant;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,20 +18,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "noticias")
-public class Noticia {
+@Table(name = "temas")
+public class Tema {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idNoticia;
+	private Integer idTemas;
 
-	@Column(nullable = false, length = 255, unique = true)
-	private String titulo;
-
-	@Column(length = 4000)
-	private String conteudo;
-
-	@Column(nullable = false)
-	private Instant dataPublicacao;
+	@Column(nullable = false, length = 100)
+	private String nomeTema;
 
 }

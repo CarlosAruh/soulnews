@@ -16,7 +16,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Embeddable
-public class NoticiaFavoritaId implements Serializable {
+public class NoticiaDepoisId implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

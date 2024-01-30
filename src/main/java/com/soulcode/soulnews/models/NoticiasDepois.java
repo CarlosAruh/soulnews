@@ -1,11 +1,9 @@
 package com.soulcode.soulnews.models;
 
 import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -17,12 +15,10 @@ import lombok.Setter;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "noticias_favoritas")
-public class NoticiaFavorita {
-
+public class NoticiasDepois {
+	
 	@EmbeddedId
-	private NoticiaFavoritaId noticiaFavoritaId;
+	private NoticiaDepoisId noticiaDepoisId;
 
 	@ManyToOne
 	@MapsId("fkUsuario")
@@ -32,6 +28,5 @@ public class NoticiaFavorita {
 	@ManyToOne
 	@MapsId("fkNoticia")
 	@JoinColumn(name = "fk_noticia")
-	private Noticia noticiasFav;
-
+	private Noticia noticiasDep;
 }
