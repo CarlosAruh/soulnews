@@ -50,11 +50,9 @@
 				</tr>
 			</tbody>
 		</table>
-		<!-- Formulário de Novo Cliente-->
 		<hr />
 		<h2>Novo Cliente</h2>
 		<form action="/usuarios/create" method="post">
-			<!-- Na inserção, atente-se para os campos do Model -->
 			<label for="nome">Nome <span style="color: red">*</span></label>
 			<input type="text" name="nome" id="nome" maxlength="120" required />
 
@@ -62,13 +60,13 @@
 			<input type="text" name="email" id="email" maxlength="80" required />
 
 			<label for="dataNascimento">Data de Nascimento<span style="color: red">*</span></label>
-			<textarea type="text" name="dataNascimento" id="dataNascimento" maxlength="180" required></textarea>
+			<input type="date" name="dataNascimento" id="dataNascimento" required>
 
 			<label for="telefone">Telefone<span style="color: red">*</span></label>
 			<input type="text" name="telefone" id="telefone" maxlength="40" required />
 
 			<label for="cpf">CPF<span style="color: red">*</span></label>
-			<input type="number" name="cpf" id="cpf" required />
+			<input type="text" name="cpf" id="cpf" required />
 
 			<button type="submit">Enviar</button>
 		</form>

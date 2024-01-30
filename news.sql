@@ -59,3 +59,5 @@ drop table temas_favoritos;
 
 
 drop database noticias_db;
+
+DESCRIBE usuarios

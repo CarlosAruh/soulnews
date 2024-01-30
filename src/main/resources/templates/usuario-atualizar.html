@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cliente - Soulib</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <a href="/usuarios">&#9666; Voltar</a>
+      <h1>Editar Usuario</h1>
+      <hr />
+      <form action="/usuarios/update" method="post">
+        <input type="hidden" name="idUsuario" th:value="${usuario.idUsuario}" />
+
+        <label for="nome">Nome <span style="color: red">*</span></label>
+        <input th:value="${usuario.nome}" type="text" name="nome" id="nome" maxlength="100" required />
+        
+        <label for="email">Email</label>
+        <input th:value="${usuario.email}" type="email" name="email" id="email" maxlength="120" />
+
+        <label for="email">Data de nascimento</label>
+        <input th:value="${usuario.dataNascimento}" type="date" name="dataNascimento" id="dataNascimento" maxlength="120" />
+        
+        <label for="telefone">Telefone <span style="color: red">*</span></label>
+        <input th:value="${usuario.telefone}" type="tel" name="telefone" id="telefone" maxlength="42" required />
+
+        <label for="email">CPF</label>
+        <input th:value="${usuario.cpf}" type="text" name="cpf" id="cpf" maxlength="120" />
+
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

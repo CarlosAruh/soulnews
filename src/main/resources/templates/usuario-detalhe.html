@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Usuario</title>
+	<link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+	<main>
+		<a href="/usuarios">&#9666; Voltar</a>
+		<h1 th:text="${usuario.nome}"></h1>
+		<p th:text="'Email: '+${usuario.email}"></p>
+		<p>Data de Nascimento: <span th:text="${usuario.dataNascimento}"></span></p>
+		<p>Telefone: <span th:text="${usuario.telefone}"></span></p>
+		<p>CPF: <span th:text="${usuario.cpf}"></span></p>
+	</main>
+	<script src="/js/main.js"></script>
+</body>
+
+</html>
