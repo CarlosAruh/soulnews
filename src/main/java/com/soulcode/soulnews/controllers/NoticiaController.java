@@ -20,7 +20,7 @@ public class NoticiaController {
 	public ModelAndView paginaNoticias() {
 		List<Noticia> noticias = noticiaRepository.findAll();
 
-		ModelAndView mv = new ModelAndView("clientes");
+		ModelAndView mv = new ModelAndView("noticias");
 		mv.addObject("listaNoticias", noticias);
 		return mv;
 	}
