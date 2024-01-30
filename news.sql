@@ -19,12 +19,12 @@ CREATE TABLE IF NOT EXISTS noticias(
 );
 
 create table if not exists temas(
-	id_temas INT PRIMARY KEY,
+	id_temas INT AUTO_INCREMENT PRIMARY KEY,
 	nome_tema VARCHAR(100) not null
 );
 
 CREATE TABLE IF NOT EXISTS noticias_temas (
-    id_noticia_tema INT AUTO_INCREMENT PRIMARY KEY,
+    id_noticia_tema INT PRIMARY KEY,
     fk_noticia INT NOT NULL,
     fk_tema INT NOT NULL,
     CONSTRAINT fk_noticias_temas_noticia FOREIGN KEY (fk_noticia) REFERENCES noticias(id_noticia),

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Soulib - Usuarios</title>
+	<link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+	<main>
+		<a href="/home">&#9666; Home</a>
+		<h1>Usuarios</h1>
+		<p>Lista de usuarios.</p>
+		<hr />
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Email</th>
+					<th>Data de Nascimento</th>
+					<th>Telefone</th>
+					<th>CPF</th>
+					<th>Excluir</th>
+					<th>Editar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="usuario : ${listaUsuarios}">
+					<td>
+						<a th:href="'/usuarios/'+${usuario.idUsuario}" th:text="${usuario.nome}">
+						</a>
+					</td>
+					<td th:text="${usuario.email}"></td>
+					<td th:text="${usuario.dataNascimento}"></td>
+					<td th:text="${usuario.telefone}"></td>
+					<td th:text="${usuario.cpf}"></td>
+					<td>
+						<form action="/usuarios/delete" method="post">
+							<input type="hidden" name="id" th:value="${usuario.idUsuario}" />
+							<button type="submit">Excluir</button>
+						</form>
+					</td>
+					<td>
+						<a th:href="'/usuarios/'+${usuario.idUsuario}+'/edit'">
+							<button>Editar</button>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Formulário de Novo Cliente-->
+		<hr />
+		<h2>Novo Cliente</h2>
+		<form action="/usuarios/create" method="post">
+			<!-- Na inserção, atente-se para os campos do Model -->
+			<label for="nome">Nome <span style="color: red">*</span></label>
+			<input type="text" name="nome" id="nome" maxlength="120" required />
+
+			<label for="email">Email<span style="color: red">*</span></label>
+			<input type="text" name="email" id="email" maxlength="80" required />
+
+			<label for="dataNascimento">Data de Nascimento<span style="color: red">*</span></label>
+			<textarea type="text" name="dataNascimento" id="dataNascimento" maxlength="180" required></textarea>
+
+			<label for="telefone">Telefone<span style="color: red">*</span></label>
+			<input type="text" name="telefone" id="telefone" maxlength="40" required />
+
+			<label for="cpf">CPF<span style="color: red">*</span></label>
+			<input type="number" name="cpf" id="cpf" required />
+
+			<button type="submit">Enviar</button>
+		</form>
+	</main>
+	<script src="/js/main.js"></script>
+</body>
+
+</html>
