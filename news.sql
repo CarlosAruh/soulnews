@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS noticias(
 );
 
 create table if not exists temas(
-	id_temas INT AUTO_INCREMENT PRIMARY KEY,
+	id_temas INT PRIMARY KEY,
 	nome_tema VARCHAR(100) not null
 );
 
@@ -61,3 +61,8 @@ drop table temas_favoritos;
 drop database noticias_db;
 
 DESCRIBE usuarios
+
+use soulib_db
+
+SELECT * FROM emprestimos;
+

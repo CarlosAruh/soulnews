@@ -1,6 +1,6 @@
 use noticias_db;
 
-INSERT INTO usuarios (nome, email, data_nascimento, telefone, cpf)
+data_realizadaINSERT INTO usuarios (nome, email, data_nascimento, telefone, cpf)
 VALUES
   ('Alice Silva', 'alice.silva@example.com', '1990-05-15', '123456789', '12345678901'),
   ('Bob Oliveira', 'bob.oliveira@example.com', '1985-10-22', '234567890', '23456789012'),

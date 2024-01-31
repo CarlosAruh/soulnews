@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Usuario</title>
+	<link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+	<main>
+		<a href="/noticias">&#9666; Voltar</a>
+		<h1 th:text="${noticia.titulo}"></h1>
+		<p>Conteudo: <span th:text="${noticia.conteudo}"></span></p>
+		<p>Data Publicação: <span th:text="${noticia.dataPublicacao}"></span></p>
+	</main>
+	<script src="/js/main.js"></script>
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Soulib - Usuarios</title>
+	<title>SoulNews - Usuarios</title>
 	<link rel="stylesheet" href="/css/styles.css" />
 </head>
 
@@ -33,7 +33,7 @@
 						</a>
 					</td>
 					<td th:text="${usuario.email}"></td>
-					<td th:text="${usuario.dataNascimento}"></td>
+					<td th:text="${#temporals.format(usuario.dataNascimento, 'dd/MM/yyyy')}"></td>
 					<td th:text="${usuario.telefone}"></td>
 					<td th:text="${usuario.cpf}"></td>
 					<td>
