@@ -18,6 +18,7 @@
 			<thead>
 				<tr>
 					<th>Titulo</th>
+					<th>topico</th>
 					<th>Conteudo</th>
 					<th>Data Publicação</th>
 					<th>Excluir</th>
@@ -30,6 +31,7 @@
 						<a th:href="'/noticias/'+${noticia.idNoticia}" th:text="${noticia.titulo}">
 						</a>
 					</td>
+					<td th:text="${noticia.topico}"></td>
 					<td th:text="${noticia.conteudo}"></td>
 					<td th:text="${#temporals.format(noticia.dataPublicacao, 'dd/MM/yyyy')}"></td>
 					<td>

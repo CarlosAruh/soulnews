@@ -28,6 +28,9 @@ public class Noticia {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idNoticia;
+	
+	@Column(nullable = false, length=50)
+	private String topico;
 
 	@Column(nullable = false, length = 255, unique = true)
 	private String titulo;

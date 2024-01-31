@@ -23,9 +23,9 @@ public class Tema {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idTemas;
+	private Integer idTema;
 
-	@Column(nullable = false, length = 100)
+	@Column(name="nome_temas", nullable = false, length = 100)
 	private String nomeTema;
 
 }
