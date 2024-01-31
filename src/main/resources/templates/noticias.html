@@ -55,7 +55,74 @@
 			<input type="text" name="titulo" id="titulo" maxlength="120" required />
 
 			<label for="conteudo">Conteudo<span style="color: red">*</span></label>
-			<textarea type="text" name="conteudo" id="conteudo" maxlength="80" required ></textarea>
+			<textarea type="text" name="conteudo" id="conteudo" maxlength="80" required></textarea>
+
+			<label for="dataPublicacao">Data Publicação<span style="color: red">*</span></label>
+			<input type="date" name="dataPublicacao" id="dataPublicacao" required>
+
+			<button type="submit">Enviar</button>
+		</form>
+	</main>
+	<script src="/js/main.js"></script>
+</body>
+
+=======
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>SoulNews - Noticias</title>
+	<link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+	<main>
+		<a href="/home">&#9666; Home</a>
+		<h1>Noticias</h1>
+		<p>Lista de noticias.</p>
+		<hr />
+		<table>
+			<thead>
+				<tr>
+					<th>Titulo</th>
+					<th>Conteudo</th>
+					<th>Data Publicação</th>
+					<th>Excluir</th>
+					<th>Editar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="noticia : ${listaNoticias}">
+					<td>
+						<a th:href="'/noticias/'+${noticia.idNoticia}" th:text="${noticia.titulo}">
+						</a>
+					</td>
+					<td th:text="${noticia.conteudo}"></td>
+					<td th:text="${#temporals.format(noticia.dataPublicacao, 'dd/MM/yyyy')}"></td>
+					<td>
+						<form action="/noticias/delete" method="post">
+							<input type="hidden" name="id" th:value="${noticia.idNoticia}" />
+							<button type="submit">Excluir</button>
+						</form>
+					</td>
+					<td>
+						<a th:href="'/noticias/'+${noticia.idNoticia}+'/edit'">
+							<button>Editar</button>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>Nova Noticia</h2>
+		<form action="/noticias/create" method="post">
+			<label for="titulo">Titulo <span style="color: red">*</span></label>
+			<input type="text" name="titulo" id="titulo" maxlength="120" required />
+
+			<label for="conteudo">Conteudo<span style="color: red">*</span></label>
+			<textarea type="text" name="conteudo" id="conteudo" maxlength="80" required></textarea>
 
 			<label for="dataPublicacao">Data Publicação<span style="color: red">*</span></label>
 			<input type="date" name="dataPublicacao" id="dataPublicacao" required>

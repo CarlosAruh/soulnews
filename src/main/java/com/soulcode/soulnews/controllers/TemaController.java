@@ -47,7 +47,7 @@ public class TemaController {
 	@PostMapping("/temas/update")
 	public String updateTema(Tema tema) {
 		try {
-			Optional<Tema> temaOpt = temaRepository.findById(tema.getIdTema());
+			Optional<Tema> temaOpt = temaRepository.findById(tema.getIdTemas());
 			if (temaOpt.isPresent()) {
 				temaRepository.save(tema);
 			}
