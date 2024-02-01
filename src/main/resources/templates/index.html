@@ -1,60 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feed de notícias</title>
-    <Link  rel="stylesheet" href="/css/styles.css"/>
+    <Link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <header>
 
-    </header>
-    <main>
+<body>
+    <section th:replace="/fragmentos::cabecalho"></section>
+    <main class="container_tela_principal">
         <section class="titulo_principal_container">
             <h1>Todas as notícias</h1>
-            <a href="/noticias" class="button_gerenciamento_noticias">
-                <img src="/img/settings.svg" alt="icone de engrenagem"/>
-                <p>Gerenciamento de notícias</p>
-			</a>
+            <input type="text" id="campo_pesquisar" placeholder="Pesquisar...">
         </section>
         <section class="card_container">
-            <div class="imagem_noticia_container">
-                <img src="https://imgs.search.brave.com/pOtyVe7kqdACobNkq3g4axnu4Mkl3FWG5qP8PSv8OQQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9iaXRjb2luLWNy/eXB0b2N1cnJlbmN5/LWZyZWUtcGhvdG8u/anBnP3c9NjAwJnF1/YWxpdHk9ODA"/>
-            </div>
-            <h1>Lorem ipsum dolor sit</h1>  
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit numquam, rerum accusamus a aliquid, iure excepturi maxime pariatur sed omnis nisi enim mollitia impedit vel, laudantium provident architecto. Quam, aliquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam, ratione nisi quis explicabo minus consectetur officiis. Dicta aliquam odio, asperiores illo provident quos. Magnam laborum debitis quas repellat. Iure?</p>
-            <section class="salvar_favoritar_container">
-                <p>Julia Santos - <span>27 Dec 2020</span></p>
-                <div class="salvar_favoritar_icones_container">
-                   <img src="/img/star.svg" alt="icone de estrela"/>
-                   <img src="/img/save.svg" alt="icone de salvar"/> 
+            <div class="card">
+                <div class="imagem_noticia_container">
+                    <img
+                        src="https://imgs.search.brave.com/pOtyVe7kqdACobNkq3g4axnu4Mkl3FWG5qP8PSv8OQQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9iaXRjb2luLWNy/eXB0b2N1cnJlbmN5/LWZyZWUtcGhvdG8u/anBnP3c9NjAwJnF1/YWxpdHk9ODA" />
                 </div>
-            </section>
+                <p>topico</p>
+                <h1>Lorem ipsum dolor sit</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit numquam, rerum accusamus a aliquid,
+                    iure excepturi maxime pariatur sed omnis nisi enim mollitia impedit vel, laudantium provident
+                    architecto. Quam, aliquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam,
+                    ratione nisi quis explicabo minus consectetur officiis. Dicta aliquam odio, asperiores illo
+                    provident quos. Magnam laborum debitis quas repellat. Iure?</p>
+                <section class="fonte_data_container">
+                    <p>Julia Santos - <span>27 Dec 2020</span></p>
+                    <div class="salvar_favoritar_icones_container">
+                        <img src="/img/star.svg" alt="icone de estrela" />
+                        <img src="/img/save.svg" alt="icone de salvar" />
+                    </div>
+                </section>
+            </div>
+
+            <div class="card">
+                <div class="imagem_noticia_container">
+                    <img
+                        src="https://imgs.search.brave.com/pOtyVe7kqdACobNkq3g4axnu4Mkl3FWG5qP8PSv8OQQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9iaXRjb2luLWNy/eXB0b2N1cnJlbmN5/LWZyZWUtcGhvdG8u/anBnP3c9NjAwJnF1/YWxpdHk9ODA" />
+                </div>
+                <h1>Lorem ipsum dolor sit</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit numquam, rerum accusamus a aliquid,
+                    iure excepturi maxime pariatur sed omnis nisi enim mollitia impedit vel, laudantium provident
+                    architecto. Quam, aliquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam,
+                    ratione nisi quis explicabo minus consectetur officiis. Dicta aliquam odio, asperiores illo
+                    provident quos. Magnam laborum debitis quas repellat. Iure?</p>
+                <section class="fonte_data_container">
+                    <p>Julia Santos - <span>27 Dec 2020</span></p>
+                    <div class="salvar_favoritar_icones_container">
+                        <img src="/img/star.svg" alt="icone de estrela" />
+                        <img src="/img/save.svg" alt="icone de salvar" />
+                    </div>
+                </section>
+            </div>
+
+            <div class="card">
+                <div class="imagem_noticia_container">
+                    <img
+                        src="https://imgs.search.brave.com/pOtyVe7kqdACobNkq3g4axnu4Mkl3FWG5qP8PSv8OQQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9iaXRjb2luLWNy/eXB0b2N1cnJlbmN5/LWZyZWUtcGhvdG8u/anBnP3c9NjAwJnF1/YWxpdHk9ODA"  />
+                </div>
+                <h1>Lorem ipsum dolor sit</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit numquam, rerum accusamus a aliquid,
+                    iure excepturi maxime pariatur sed omnis nisi enim mollitia impedit vel, laudantium provident
+                    architecto. Quam, aliquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam,
+                    ratione nisi quis explicabo minus consectetur officiis. Dicta aliquam odio, asperiores illo
+                    provident quos. Magnam laborum debitis quas repellat. Iure?</p>
+                <section class="fonte_data_container">
+                    <p>Julia Santos - <span>27 Dec 2020</span></p>
+                    <div class="salvar_favoritar_icones_container">
+                        <img src="/img/star.svg" alt="icone de estrela" />
+                        <img src="/img/save.svg" alt="icone de salvar" />
+                    </div>
+                </section>
+            </div>
         </section>
     </main>
-    <footer class="footer_container">
-        <section class="perguntas_frequentes_container">
-            <img src="/img/logo.svg"/>
-            <a href="#">
-                Perguntas Frequentes
-            </a>
-        </section>
-        <section class="contatos_container">
-            <h1>Entre em contato conosco:</h1>
-            <div>
-                <img src="/img/email.svg" alt="icone de e-mail"/>
-                <p>emailexemplo@gmail.com</p>
-            </div>
-            <div>
-                <img src="/img/phone.svg" alt="icone de celular"/>
-                <p>9 9999-9999</p>
-            </div>
-            <div>
-                <img src="/img/link.svg" alt="icone de link"/>
-                <p>Nos envie uma <span>mensagem</span></p>
-            </div>
-        </section>
-    </footer>
+    <section th:replace="/fragmentos::footer"></section>
+    <script src="/js/main.js"></script>
 </body>
+
 </html>
