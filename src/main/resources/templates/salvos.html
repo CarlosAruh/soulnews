@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Empréstimos</title>
+	<link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+	<main>
+		<a href="/">&#9666; Home</a>
+		<hr />
+		<h2>Novo Favorito</h2>
+		<form action="/salvos/create" method="post">
+			<label for="dataAdicao">Data Publicação<span style="color: red">*</span></label>
+			<input type="date" name="dataAdicao" id="dataAdicao" required />
+
+			<select name="idNoticia" required>
+				<option selected disabled value="">Selecione um noticia</option>
+				<option th:each="noticia : ${listaNoticias}" th:value="${noticia.idNoticia}">
+					<span th:text="${noticia.titulo}"></span> -
+					<span th:text="${noticia.fonte}"></span>
+				</option>
+			</select>
+
+			<select name="idUsuario" required>
+				<option selected disabled value="">Selecione um usuario</option>
+				<option th:each="usuario : ${listaUsuarios}" th:value="${usuario.idUsuario}">
+					<span th:text="${usuario.nome}"></span> -
+					<span th:text="${usuario.email}"></span>
+				</option>
+			</select>
+
+			<button type="submit">Enviar</button>
+		</form>
+		<!---->
+		<h1>Salvos</h1>
+		<p>Lista de salvos.</p>
+		<hr />
+		<table>
+			<thead>
+				<tr>
+					<th>Usuario</th>
+					<th>Noticia</th>
+					<th>Data de Adição</th>
+					<th>Excluir</th>
+					<th>Editar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="salvo : ${listaSalvos}">
+					<td>
+						<a th:href="'/salvos/'+${salvo.idSalvo}" th:text="${salvo.usuario.nome}">
+						</a>
+					</td>
+					<td th:text="${salvo.noticiasSalvo.titulo}"></td>
+					<td th:text="${salvo.dataAdicao}"></td>
+					<td>
+						<form action="/salvos/delete" method="post">
+							<input type="hidden" name="id" th:value="${salvo.idSalvo}" />
+							<button type="submit">Excluir</button>
+						</form>
+					</td>
+					<td>
+						<a th:href="'/salvos/'+${salvo.idSalvo}+'/edit'">
+							<button>Editar</button>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+	<script src="/js/main.js"></script>
+</body>
+
+</html>
