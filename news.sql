@@ -13,24 +13,12 @@ create table if not exists usuarios(
 
 CREATE TABLE IF NOT EXISTS noticias(
     id_noticia INT AUTO_INCREMENT PRIMARY KEY,
-    topico varchar(15) NOT NULL,
+    topico varchar(30) NOT NULL,
     titulo VARCHAR(255) NOT NULL UNIQUE,
     conteudo VARCHAR(4000),
-    data_publicacao DATE NOT NULL
-);
-
-create table if not exists temas(
-	id_temas INT AUTO_INCREMENT PRIMARY KEY,
-    nome_tema VARCHAR(100) NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS noticias_temas (
-    id_noticia_tema INT PRIMARY KEY,
-    fk_noticia INT NOT NULL,
-    fk_tema INT NOT NULL,
-    CONSTRAINT fk_noticias_temas_noticia FOREIGN KEY (fk_noticia) REFERENCES noticias(id_noticia),
-    CONSTRAINT fk_noticias_temas_tema FOREIGN KEY (fk_tema) REFERENCES temas(id_temas),
-    UNIQUE KEY unique_noticia_tema (fk_noticia, fk_tema)
+    data_publicacao DATE NOT NULL,
+    categoria VARCHAR(30) not null,
+    fonte varchar(100)not null
 );
 
 CREATE TABLE IF NOT EXISTS noticias_favoritas (

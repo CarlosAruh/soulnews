@@ -29,7 +29,7 @@ public class Noticia {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idNoticia;
 	
-	@Column(nullable = false, length=50)
+	@Column(nullable = false, length=30)
 	private String topico;
 
 	@Column(nullable = false, length = 255, unique = true)
@@ -41,5 +41,11 @@ public class Noticia {
 	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
 	private LocalDate dataPublicacao;
+	
+	@Column(nullable = false, length= 30)
+	private String categoria;
+	
+	@Column(nullable = false, length= 100)
+	private String fonte;
 
 }

@@ -16,6 +16,9 @@
 		<form action="/noticias/update" method="post">
 			<input type="hidden" name="idNoticia" th:value="${noticia.idNoticia}" />
 
+			<label for="topico">topico<span style="color: red">*</span></label>
+			<input th:value="${noticia.topico}" type="text" name="topico" id="topico" maxlength="30" required />
+
 			<label for="titulo">Titulo<span style="color: red">*</span></label>
 			<input th:value="${noticia.titulo}" type="text" name="titulo" id="titulo" maxlength="100" required />
 
@@ -25,6 +28,12 @@
 			<label for="conteudo">Data Publicação</label>
 			<input th:value="${noticia.dataPublicacao}" type="date" name="dataPublicacao" id="dataPublicacao"
 				maxlength="120" />
+
+			<label for="categoria">Categoria<span style="color: red">*</span></label>
+			<input th:value="${noticia.categoria}" type="text" name="categoria" id="categoria" maxlength="30" required></input>
+			
+			<label for="fonte">Fonte<span style="color: red">*</span></label>
+			<input th:value="${noticia.fonte}" type="text" name="fonte" id="fonte" maxlength="100" required></input>
 
 			<button type="submit">Enviar</button>
 		</form>

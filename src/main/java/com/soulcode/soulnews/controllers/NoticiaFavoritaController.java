@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.soulcode.soulnews.models.Noticia;
@@ -28,20 +28,40 @@ public class NoticiaFavoritaController {
 
 	@Autowired
 	private NoticiaRepository noticiaRepository;
+	
+	//CREATE
+	@PostMapping("/noticias-favoritas/create")
+	public String createNoticiaFavorita(@RequestParam Integer idUsuario, @RequestParam Integer IdNoticia,
+			NoticiaFavorita noticiaFavorita) {
+		try {
+			Optional<Usuario> usuarioOpt = usuarioRepository.findById(idUsuario);
+			Optional<Noticia> noticiaOpt = noticiaRepository.findById(IdNoticia);
+			if (usuarioOpt.isPresent() && noticiaOpt.isPresent()) {
+				Usuario usuario = usuarioOpt.get();
+				Noticia noticia = noticiaOpt.get();
 
+				noticiaFavorita.setUsuario(usuario);
+				noticiaFavorita.setNoticiasFav(noticia);
+
+				noticiaFavoritaRepository.save(noticiaFavorita);
+			}
+
+		} catch (Exception ex) {
+			return "erro";
+		}
+		return "redirect:/noticias-favoritas";
+	}
+	
+	//READ
 	@GetMapping("/noticias-favoritas")
-	public ModelAndView paginaFavoritas() {
+	public ModelAndView paginasFavoritas() {
 		List<NoticiaFavorita> favoritas = noticiaFavoritaRepository.findAll();
-		List<Usuario> usuarios = usuarioRepository.findAll();
-		List<Noticia> noticias = noticiaRepository.findAll();
 
 		ModelAndView mv = new ModelAndView("noticias-favoritas");
 		mv.addObject("listaFavoritas", favoritas);
-		mv.addObject("listaUsuarios", usuarios);
-		mv.addObject("listaNoticias", noticias);
 
 		return mv;
 	}
-
+	
 	
 }
