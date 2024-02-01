@@ -1,6 +1,6 @@
 use noticias_db;
 
-data_realizadaINSERT INTO usuarios (nome, email, data_nascimento, telefone, cpf)
+INSERT INTO usuarios (nome, email, data_nascimento, telefone, cpf)
 VALUES
   ('Alice Silva', 'alice.silva@example.com', '1990-05-15', '123456789', '12345678901'),
   ('Bob Oliveira', 'bob.oliveira@example.com', '1985-10-22', '234567890', '23456789012'),
@@ -23,19 +23,21 @@ VALUES
   ('Sofia Oliveira', 'sofia.oliveira@example.com', '1983-04-04', '990011223', '99001122334'),
   ('Tiago Costa', 'tiago.costa@example.com', '1997-12-20', '001122334', '00112233445');
 
-INSERT INTO noticias (titulo, conteudo, data_publicacao)
+INSERT INTO noticias (topico, titulo, conteudo, data_publicacao)
 VALUES
-  ('Descoberta científica revolucionária', 'Cientistas descobrem uma nova partícula subatômica que pode revolucionar a física moderna.', '2024-01-30 10:00:00'),
-  ('Avanço na cura do câncer', 'Pesquisadores anunciam um avanço significativo na busca por uma cura para o câncer.', '2024-01-29 15:30:00'),
-  ('Empresa lança novo smartphone', 'A gigante da tecnologia lança seu mais recente modelo de smartphone com recursos inovadores.', '2024-01-28 14:45:00'),
-  ('Novo filme blockbuster anunciado', 'O próximo filme da franquia de sucesso é revelado, prometendo ser um sucesso de bilheteria.', '2024-01-27 12:20:00'),
-  ('Descoberta arqueológica fascinante', 'Arqueólogos descobrem uma cidade antiga perdida há séculos, revelando insights sobre civilizações antigas.', '2024-01-26 09:15:00'),
-  ('Tendências de moda para a próxima estação', 'Estilistas renomados revelam as tendências de moda que dominarão a próxima estação.', '2024-01-25 17:00:00'),
-  ('Startup recebe investimento milionário', 'Uma startup inovadora arrecada um investimento significativo para expandir suas operações.', '2024-01-24 11:30:00'),
-  ('Descoberta de exoplaneta habitável', 'Astrônomos identificam um exoplaneta na zona habitável, aumentando as esperanças de encontrar vida extraterrestre.', '2024-01-23 08:45:00'),
-  ('Atleta quebra recorde mundial', 'Um atleta surpreende o mundo ao quebrar um recorde mundial em sua disciplina.', '2024-01-22 16:10:00'),
-  ('Lançamento de novo livro best-seller', 'Um autor renomado lança seu mais recente livro, previsto para se tornar um best-seller.', '2024-01-21 13:00:00');
+  ('Ciência', 'Cientistas Anunciam Descoberta de Nova Partícula', 'Em uma reviravolta emocionante, cientistas anunciam a descoberta de uma nova partícula subatômica que desafia as teorias atuais da física quântica. A comunidade científica está intrigada com as implicações dessa descoberta.', '2024-02-05'),
+  ('Saúde', 'Pesquisadores Alcançam Avanço Promissor no Tratamento do Câncer', 'Pesquisadores relatam um avanço significativo no desenvolvimento de uma terapia inovadora para o tratamento do câncer. Os resultados dos testes clínicos são promissores e oferecem esperança para pacientes em todo o mundo.', '2024-02-04'),
+  ('Tecnologia', 'Empresa Lança Novo Dispositivo Revolucionário', 'A gigante da tecnologia acaba de lançar seu mais recente dispositivo, prometendo revolucionar a maneira como interagimos com a tecnologia no dia a dia. Os entusiastas aguardam ansiosos para experimentar as inovações apresentadas.', '2024-02-03'),
+  ('Entretenimento', 'Novo Filme Blockbuster Domina Bilheterias Mundiais', 'O aguardado lançamento do próximo filme da franquia de sucesso supera as expectativas, atraindo multidões aos cinemas e dominando as bilheterias globais. Críticos elogiam a trama envolvente e os efeitos visuais impressionantes.', '2024-02-02'),
+  ('Arqueologia', 'Arqueólogos Descobrem Cidade Antiga Perdida', 'Em uma escavação emocionante, arqueólogos revelam os vestígios de uma antiga cidade perdida há séculos. A descoberta lança luz sobre a vida e a cultura de civilizações antigas até então desconhecidas.', '2024-02-01'),
+  ('Moda', 'Estilistas Renomados Antecipam Tendências da Próxima Estação', 'Os principais estilistas do mundo da moda revelam suas criações e antecipam as tendências que dominarão a próxima estação. Cores vibrantes, padrões arrojados e designs inovadores são destaque nas passarelas.', '2024-01-31'),
+  ('Negócios', 'Startup Recebe Investimento Milionário para Expansão', 'Uma startup inovadora arrecada um investimento significativo em uma rodada de financiamento, visando expandir suas operações globalmente. Os investidores acreditam no potencial disruptivo da empresa no mercado.', '2024-01-30'),
+  ('Astronomia', 'Astrônomos Identificam Exoplaneta na Zona Habitável', 'Em uma descoberta emocionante, astrônomos identificam um exoplaneta localizado na zona habitável de sua estrela-mãe. Essa revelação aumenta as esperanças de encontrar sinais de vida além do nosso sistema solar.', '2024-01-29'),
+  ('Esportes', 'Atleta Quebra Recorde Mundial em Competição', 'Um atleta excepcional surpreende o mundo ao quebrar um recorde mundial em sua disciplina durante uma competição internacional. A conquista é saudada como um feito extraordinário no mundo do esporte.', '2024-01-28'),
+  ('Literatura', 'Autor Renomado Lança Novo Livro Best-Seller', 'Um autor renomado lança seu mais recente trabalho literário, que rapidamente se torna um best-seller nas listas de livros mais vendidos. Leitores ansiosos elogiam a narrativa envolvente e os personagens cativantes.', '2024-01-27');
 
+
+  
 INSERT INTO temas (id_temas, nome_tema)
 VALUES
   (1, 'Ciência'),
