@@ -1,3 +1,5 @@
+drop database noticias_db;
+
 use noticias_db;
 
 INSERT INTO usuarios (nome, email, data_nascimento, telefone, cpf)
@@ -23,30 +25,15 @@ VALUES
   ('Sofia Oliveira', 'sofia.oliveira@example.com', '1983-04-04', '990011223', '99001122334'),
   ('Tiago Costa', 'tiago.costa@example.com', '1997-12-20', '001122334', '00112233445');
 
-INSERT INTO noticias (topico, titulo, conteudo, data_publicacao)
+INSERT INTO noticias (topico, titulo, conteudo, data_publicacao, categoria, fonte)
 VALUES
-  ('Ciência', 'Cientistas Anunciam Descoberta de Nova Partícula', 'Em uma reviravolta emocionante, cientistas anunciam a descoberta de uma nova partícula subatômica que desafia as teorias atuais da física quântica. A comunidade científica está intrigada com as implicações dessa descoberta.', '2024-02-05'),
-  ('Saúde', 'Pesquisadores Alcançam Avanço Promissor no Tratamento do Câncer', 'Pesquisadores relatam um avanço significativo no desenvolvimento de uma terapia inovadora para o tratamento do câncer. Os resultados dos testes clínicos são promissores e oferecem esperança para pacientes em todo o mundo.', '2024-02-04'),
-  ('Tecnologia', 'Empresa Lança Novo Dispositivo Revolucionário', 'A gigante da tecnologia acaba de lançar seu mais recente dispositivo, prometendo revolucionar a maneira como interagimos com a tecnologia no dia a dia. Os entusiastas aguardam ansiosos para experimentar as inovações apresentadas.', '2024-02-03'),
-  ('Entretenimento', 'Novo Filme Blockbuster Domina Bilheterias Mundiais', 'O aguardado lançamento do próximo filme da franquia de sucesso supera as expectativas, atraindo multidões aos cinemas e dominando as bilheterias globais. Críticos elogiam a trama envolvente e os efeitos visuais impressionantes.', '2024-02-02'),
-  ('Arqueologia', 'Arqueólogos Descobrem Cidade Antiga Perdida', 'Em uma escavação emocionante, arqueólogos revelam os vestígios de uma antiga cidade perdida há séculos. A descoberta lança luz sobre a vida e a cultura de civilizações antigas até então desconhecidas.', '2024-02-01'),
-  ('Moda', 'Estilistas Renomados Antecipam Tendências da Próxima Estação', 'Os principais estilistas do mundo da moda revelam suas criações e antecipam as tendências que dominarão a próxima estação. Cores vibrantes, padrões arrojados e designs inovadores são destaque nas passarelas.', '2024-01-31'),
-  ('Negócios', 'Startup Recebe Investimento Milionário para Expansão', 'Uma startup inovadora arrecada um investimento significativo em uma rodada de financiamento, visando expandir suas operações globalmente. Os investidores acreditam no potencial disruptivo da empresa no mercado.', '2024-01-30'),
-  ('Astronomia', 'Astrônomos Identificam Exoplaneta na Zona Habitável', 'Em uma descoberta emocionante, astrônomos identificam um exoplaneta localizado na zona habitável de sua estrela-mãe. Essa revelação aumenta as esperanças de encontrar sinais de vida além do nosso sistema solar.', '2024-01-29'),
-  ('Esportes', 'Atleta Quebra Recorde Mundial em Competição', 'Um atleta excepcional surpreende o mundo ao quebrar um recorde mundial em sua disciplina durante uma competição internacional. A conquista é saudada como um feito extraordinário no mundo do esporte.', '2024-01-28'),
-  ('Literatura', 'Autor Renomado Lança Novo Livro Best-Seller', 'Um autor renomado lança seu mais recente trabalho literário, que rapidamente se torna um best-seller nas listas de livros mais vendidos. Leitores ansiosos elogiam a narrativa envolvente e os personagens cativantes.', '2024-01-27');
-
-
-  
-INSERT INTO temas (id_temas, nome_tema)
-VALUES
-  (1, 'Ciência'),
-  (2, 'Saúde'),
-  (3, 'Tecnologia'),
-  (4, 'Entretenimento'),
-  (5, 'Arqueologia'),
-  (6, 'Moda'),
-  (7, 'Negócios'),
-  (8, 'Astronomia'),
-  (9, 'Esportes'),
-  (10, 'Literatura');
+  ('Fisica', 'Cientistas Anunciam Descoberta de Nova Partícula', 'Em uma reviravolta emocionante, cientistas anunciam a descoberta de uma nova partícula subatômica que desafia as teorias atuais da física quântica. A comunidade científica está intrigada com as implicações dessa descoberta.', '2024-02-05', 'Ciência', 'Carlos'),
+  ('Oncologia', 'Pesquisadores Alcançam Avanço Promissor no Tratamento do Câncer', 'Pesquisadores relatam um avanço significativo no desenvolvimento de uma terapia inovadora para o tratamento do câncer. Os resultados dos testes clínicos são promissores e oferecem esperança para pacientes em todo o mundo.', '2024-02-04','Saúde', 'Marcia'),
+  ('Inovação', 'Empresa Lança Novo Dispositivo Revolucionário', 'A gigante da tecnologia acaba de lançar seu mais recente dispositivo, prometendo revolucionar a maneira como interagimos com a tecnologia no dia a dia. Os entusiastas aguardam ansiosos para experimentar as inovações apresentadas.', '2024-02-03', 'Tecnologia', 'Jonatas'),
+  ('Cinema', 'Novo Filme Blockbuster Domina Bilheterias Mundiais', 'O aguardado lançamento do próximo filme da franquia de sucesso supera as expectativas, atraindo multidões aos cinemas e dominando as bilheterias globais. Críticos elogiam a trama envolvente e os efeitos visuais impressionantes.', '2024-02-02', 'Entretenimento', 'Wellington'),
+  ('Escavações', 'Arqueólogos Descobrem Cidade Antiga Perdida', 'Em uma escavação emocionante, arqueólogos revelam os vestígios de uma antiga cidade perdida há séculos. A descoberta lança luz sobre a vida e a cultura de civilizações antigas até então desconhecidas.', '2024-02-01', 'Arqueologia', 'Jonatas'),
+  ('Proxima Estação', 'Estilistas Renomados Antecipam Tendências da Próxima Estação', 'Os principais estilistas do mundo da moda revelam suas criações e antecipam as tendências que dominarão a próxima estação. Cores vibrantes, padrões arrojados e designs inovadores são destaque nas passarelas.', '2024-01-31', 'Moda','Marcia'),
+  ('Startups', 'Startup Recebe Investimento Milionário para Expansão', 'Uma startup inovadora arrecada um investimento significativo em uma rodada de financiamento, visando expandir suas operações globalmente. Os investidores acreditam no potencial disruptivo da empresa no mercado.', '2024-01-30','Negócios', 'Carlos'),
+  ('Exoplanetas', 'Astrônomos Identificam Exoplaneta na Zona Habitável', 'Em uma descoberta emocionante, astrônomos identificam um exoplaneta localizado na zona habitável de sua estrela-mãe. Essa revelação aumenta as esperanças de encontrar sinais de vida além do nosso sistema solar.', '2024-01-29', 'Astronomia', 'Katiene'),
+  ('Atletismo', 'Atleta Quebra Recorde Mundial em Competição', 'Um atleta excepcional surpreende o mundo ao quebrar um recorde mundial em sua disciplina durante uma competição internacional. A conquista é saudada como um feito extraordinário no mundo do esporte.', '2024-01-28', 'Esportes', 'Katiene'),
+  ('Best-Seller', 'Autor Renomado Lança Novo Livro Best-Seller', 'Um autor renomado lança seu mais recente trabalho literário, que rapidamente se torna um best-seller nas listas de livros mais vendidos. Leitores ansiosos elogiam a narrativa envolvente e os personagens cativantes.', '2024-01-27', 'Literatura', 'Wellington');
