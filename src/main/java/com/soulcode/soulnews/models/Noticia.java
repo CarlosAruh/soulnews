@@ -8,8 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -38,7 +36,6 @@ public class Noticia {
 	@Column(length = 4000)
 	private String conteudo;
 	
-	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
 	private LocalDate dataPublicacao;
 	
