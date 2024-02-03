@@ -22,4 +22,9 @@ public class HomeController {
 		mv.addObject("listaNoticias", noticias);
 		return mv;
 	}
+
+	@GetMapping("/criar-noticia")
+    public String paginaCriarNoticia() {
+        return "criar-noticia";
+    }
 }
