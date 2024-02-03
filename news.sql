@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS noticias(
     id_noticia INT AUTO_INCREMENT PRIMARY KEY,
     topico varchar(50) NOT NULL,
     titulo VARCHAR(255) NOT NULL UNIQUE,
+    caminho_imagem varchar(200) not null,
     conteudo VARCHAR(4000),
     data_publicacao DATE NOT NULL,
     categoria VARCHAR(50) not null,
@@ -49,7 +50,7 @@ drop table temas;
 DELETE FROM NOTICIAS;
 
 
-DESCRIBE temas
+DESCRIBE noticias;
 
 use soulib_db
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Editar Empréstimo</title>
+	<link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+	<main>
+		<a href="/favoritas">&#9666; Voltar</a>
+		<h1>Editar Favorita</h1>
+		<hr />
+		<th>
+			<form action="/favoritas/update" method="post">
+
+				<input type="hidden" name="idFavorita" th:value="${favorita.idFavorita}" />
+				<label for="nome">Nome<span style="color: red">*</span></label>
+				<select th:name="idUsuario" id="nome" required>
+					<option th:each="usuario : ${listaUsuarios}" th:value="${usuario.idUsuario}"
+						th:selected="${usuario.idUsuario == favorita.usuario.idUsuario}">
+						<span th:text="${usuario.nome}"></span>
+					</option>
+				</select>
+				<label for="noticia">Noticia<span style="color: red">*</span></label>
+				<select th:name="idNoticia" id="noticia" required>
+					<option th:each="noticia : ${listaNoticias}" th:value="${noticia.idNoticia}"
+						th:selected="${noticia.idNoticia == favorita.noticiasFav.idNoticia}">
+						<span th:text="${noticia.titulo}"></span>
+					</option>
+				</select>
+
+
+				<label for="dataAdicao">Data Realizada <span style="color: red">*</span></label>
+				<input type="date" name="dataAdicao" id="dataAdicao" th:value="${favorita.dataAdicao}"
+					required />
+
+				
+				<button type="submit">Atualizar</button>
+			</form>
+		</th>
+	</main>
+	<script src="/js/main.js"></script>
+</body>
+
+</html>

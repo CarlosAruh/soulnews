@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Detalhes do Empréstimo</title>
+	<link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+	<main>
+		<a href="/favoritas">&#9666; Voltar</a>
+		<h1>Detalhes Noticia</h1>
+		<th>
+			<p>Usuario: <span th:text="${favorita.usuario.nome}"></span></p>
+			<p>
+				Noticia: <span th:text="${favorita.noticiasFav.titulo}"></span>
+			</p>
+			<p>
+				Data Adição: <span th:text="${favorita.dataAdicao}"></span>
+			</p>
+		</th>
+	</main>
+	<script src="/js/main.js"></script>
+</body>
+
+</html>
