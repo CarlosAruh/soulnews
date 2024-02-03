@@ -4,42 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notícias - SoulNews</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <title>Editar notícia - SoulNews</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
 
-    <!-- <div th:replace="/fragmentos :: cabecalho"></div>-->
-    <main>
-       
-        <h1>Edite sua notícia</h1>
+    <div class="wrapper">
+        <div th:replace="~{/fragmentos::cabecalho}"></div>
+        <main>
+            <section class="titulo_principal_container">
+                <h1>Edite sua notícia</h1>
+            </section>
+            <hr /> <br /> <br />
 
-        <form action="/noticias/delete" method="post">
-            <input type="hidden" name="id" th:value="${noticia.idNoticia}" />
-           
-        
-        <form action="/noticias/create" method="post">
+            <form class="forms" action="/noticias/update" method="post">
+                <input type="hidden" name="idNoticia" th:value="${noticia.idNoticia}" />
 
-            <label for="titulo">Título:</label>
-            <input type="text" name="titulo"  placeholder="Título da manchete" maxlength="100" required />
+                <label for="topico">Tópico:</label>
+                <input th:value="${noticia.topico}" type="text" name="topico" placeholder="Tópico da manchete"
+                    maxlength="30" required />
 
-            <label for="categoria">Imagem:</label>
-            <input type="text" name="imagem" placeholder="Link para a imagem da manchete" id="imagem" maxlength="100" required />
-            
-            <label for="categoria">Autor:</label>
-            <input type="text" name="autor" placeholder="Quem é o autor?"id="autor" maxlength="100" required />
+                <label for="titulo">Título:</label>
+                <input th:value="${noticia.titulo}" type="text" name="titulo" placeholder="Título da manchete"
+                    maxlength="100" required />
 
-            <label for="categoria">Assunto:</label>
-            <input type="text" name="assunto" placeholder="Opções" id="assunto" maxlength="100" required />
-            
+                <label for="categoria">Autor:</label>
+                <input th:value="${noticia.fonte}" type="text" name="autor" placeholder="Quem é o autor?" id="autor"
+                    maxlength="100" required />
 
-            <label for="conteudo">Descrição:</label>
-            <textarea name="conteudo" placeholder="Use esse campo para descrever a notícia" id="conteudo" rows="5" maxlength="1000"></textarea>
+                <label for="categoria">Categoria:</label>
+                <input th:value="${noticia.categoria}" type="text" name="categoria" placeholder="Opções" id="categoria"
+                    maxlength="100" required />
 
-            <button type="submit">Enviar</button>
-        </form>
-    </main>
+                <label for="conteudo">Descrição:</label>
+                <textarea th:text="${noticia.conteudo}" name="conteudo" id="conteudo" rows="7"
+                    maxlength="4000"></textarea>
+
+                <label for="data">Data Notícia<span style="color: red">*</span></label>
+                <input th:value="${noticia.dataPublicacao}" type="date" name="data" id="data" required />
+
+                <!-- <label for="categoria">Imagem:</label>
+            <input type="text" name="imagem" placeholder="Link para a imagem da manchete" id="imagem" maxlength="100"  /> -->
+
+                <br><br><button type="submit">Salvar</button>
+            </form>
+        </main>
+        <div th:replace="~{/fragmentos::rodape}"></div>
+    </div>
     <script src="/js/main.js"></script>
 </body>
 

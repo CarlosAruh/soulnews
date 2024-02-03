@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <div class="wrapper">
+        <div th:replace="~{/fragmentos::cabecalho}"></div>
 	<main>
 		<a href="/home">&#9666; Home</a>
 		<h1>Usuarios</h1>
@@ -71,7 +73,9 @@
 			<button type="submit">Enviar</button>
 		</form>
 	</main>
-	<script src="/js/main.js"></script>
+	<div th:replace="~{/fragmentos::rodape}"></div>
+</div>
+<script src="/js/main.js"></script>
 </body>
 
 </html>

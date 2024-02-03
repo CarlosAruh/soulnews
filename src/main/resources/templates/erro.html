@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina de Erro.</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div th:replace="~{/fragmentos::cabecalho}"></div>
+        <main>
+            <h1>Erro</h1>
+            <p th:text="${msg} ?: 'Ocorreu um erro não identificado'"></p>
+        </main>
+        <div th:replace="~{/fragmentos::rodape}"></div>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

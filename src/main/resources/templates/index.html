@@ -14,7 +14,7 @@
 <body>
 
     <div class="wrapper">
-        <div th:replace="/fragmentos::cabecalho"></div>
+        <div th:replace="~{/fragmentos::cabecalho}"></div>
         <main class="container_tela_principal">
 
             <section class="titulo_principal_container">
@@ -46,7 +46,7 @@
                 </div>
             </section>
         </main>
-        <div th:replace="/fragmentos::footer"></div>
+        <div th:replace="~{/fragmentos::rodape}"></div>
     </div>
     <script src="/js/main.js"></script>
 </body>

@@ -12,33 +12,51 @@
 </head>
 
 <body>
-    <section th:replace="/fragmentos::cabecalho"></section>
-    <main class="container_tela_principal">
-        <section class="titulo_principal_container">
-            <h1>Seus favoritos</h1>
-        </section>
-        <section class="card_container">
-            <div class="card">
-                <div class="imagem_noticia_container">
-                    <img
-                        src="https://imgs.search.brave.com/pOtyVe7kqdACobNkq3g4axnu4Mkl3FWG5qP8PSv8OQQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9iaXRjb2luLWNy/eXB0b2N1cnJlbmN5/LWZyZWUtcGhvdG8u/anBnP3c9NjAwJnF1/YWxpdHk9ODA" />
+    <div class="wrapper">
+        <div th:replace="~{/fragmentos::cabecalho}"></div>
+        <main class="container_tela_principal">
+
+            <section class="titulo_principal_container">
+                <h1>Todas notícias</h1>
+                <input type="text" id="campo_pesquisa" placeholder="Pesquisar">
+            </section>
+
+            <hr /> <br /> <br />
+
+            <section class="card_container">
+                <div class="card" th:each="noticia : ${listaNoticias}">
+                    <div class="imagem_noticia_container">
+                        <img
+                            src="https://imgs.search.brave.com/pOtyVe7kqdACobNkq3g4axnu4Mkl3FWG5qP8PSv8OQQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9iaXRjb2luLWNy/eXB0b2N1cnJlbmN5/LWZyZWUtcGhvdG8u/anBnP3c9NjAwJnF1/YWxpdHk9ODA" />
+                    </div>
+                    <h3 th:text="${noticia.topico}"></h3>
+                    <h2 th:text="${noticia.titulo}"></h2>
+                    <div class="card_content">
+                        <div class="resumo" th:text="${noticia.conteudo}"></div>
+                        <section class="fonte_data_container">
+                            <p th:text="'- ' + ${noticia.fonte}"></p>
+                            <span th:text="${#temporals.format(noticia.dataPublicacao)}"></span>
+                            <div class="buttons_container">
+                                <table>
+                                    <td>
+                                        <form action="/noticias/delete" method="post">
+                                            <input type="hidden" name="id" th:value="${noticia.idNoticia}" />
+                                            <button id="delete" type="submit">Excluir</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <a
+                                            th:href="'/noticias/'+ ${noticia.idNoticia} + '/edit'"><button>Editar</button></a>
+                                    </td>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-                <h1>Lorem ipsum dolor sit</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit numquam, rerum accusamus a aliquid,
-                    iure excepturi maxime pariatur sed omnis nisi enim mollitia impedit vel, laudantium provident
-                    architecto. Quam, aliquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam,
-                    ratione nisi quis explicabo minus consectetur officiis. Dicta aliquam odio, asperiores illo
-                    provident quos. Magnam laborum debitis quas repellat. Iure?</p>
-                <section class="fonte_data_container">
-                    <p>Julia Santos - <span>27 Dec 2020</span></p>
-					<div class="button_container">
-						<button>editar</button>
-						<button>deletar</button>
-					</div>
-                </section>
-        </section>
-    </main>
-    <section th:replace="/fragmentos::footer"></section>
+            </section>
+        </main>
+        <div th:replace="~{/fragmentos::rodape}"></div>
+    </div>
     <script src="/js/main.js"></script>
 </body>
 

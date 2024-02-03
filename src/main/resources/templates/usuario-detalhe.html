@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <div class="wrapper">
+        <div th:replace="~{/fragmentos::cabecalho}"></div>
 	<main>
 		<a href="/usuarios">&#9666; Voltar</a>
 		<h1 th:text="${usuario.nome}"></h1>
@@ -17,7 +19,9 @@
 		<p>Telefone: <span th:text="${usuario.telefone}"></span></p>
 		<p>CPF: <span th:text="${usuario.cpf}"></span></p>
 	</main>
-	<script src="/js/main.js"></script>
+	<div th:replace="~{/fragmentos::rodape}"></div>
+</div>
+<script src="/js/main.js"></script>
 </body>
 
 </html>

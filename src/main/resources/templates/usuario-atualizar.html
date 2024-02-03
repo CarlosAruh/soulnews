@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <div class="wrapper">
+        <div th:replace="~{/fragmentos::cabecalho}"></div>
 	<main>
 		<a href="/noticias">&#9666; Voltar</a>
 		<h1>Editar Noticia</h1>
@@ -29,7 +31,9 @@
 			<button type="submit">Enviar</button>
 		</form>
 	</main>
-	<script src="/js/main.js"></script>
+	<div th:replace="~{/fragmentos::rodape}"></div>
+</div>
+<script src="/js/main.js"></script>
 </body>
 
 </html>
