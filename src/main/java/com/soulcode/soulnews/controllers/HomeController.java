@@ -9,6 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.soulcode.soulnews.models.Noticia;
 import com.soulcode.soulnews.repositories.NoticiaRepository;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class HomeController {
@@ -22,4 +24,12 @@ public class HomeController {
 		mv.addObject("listaNoticias", noticias);
 		return mv;
 	}
+	
+	@GetMapping("/grcmt")
+	public ModelAndView paginaGerenciamento() {
+		ModelAndView mv = new ModelAndView("grcmt");
+		return mv;
+	}
+	
+	
 }
