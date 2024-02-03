@@ -20,8 +20,8 @@
 }
 
 
-body {
-  height: 100vh;
+body, html {
+  height: 100%;
   width: 100%;
   background-size: cover;
 }
@@ -110,7 +110,7 @@ li {
   height: 0;
   top: 6vw;
   width: 22vw;
-  background-color: #d8d8d8;
+  background-color: var(--background-menus);
   backdrop-filter: blur(15px);
   border-radius: 10px;
   overflow: hidden;
@@ -127,7 +127,7 @@ li {
   margin-bottom: 15px;
 }
 
-form {
+.forms {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -156,7 +156,7 @@ label {
   border: 2px solid #0C0C34;
 }
 
-.forms button {
+button {
   background-color: #0C0C34;
   color: white;
   margin-top: 7px;
@@ -184,7 +184,7 @@ a {
 
 .wrapper{
   padding-bottom: 200px;
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
   position: relative;
 }
@@ -298,7 +298,6 @@ a {
 }
 
 #logo_footer{
-  height: 6vw;
   margin-bottom: 20px;
 }
 
@@ -312,9 +311,9 @@ a {
   color: var(--color-text-secondary);
   background: var(--backgound-button);
   text-align: center;
-  font-size: 1.1rem;
-  border-radius: 15px;
-  padding: 1vw 1vw;
+  font-size: calc(0.6rem + 0.7vw);
+  border-radius: 20px;
+  padding: 2.5% 1%;
 }
 
 .contatos_container {
@@ -336,7 +335,7 @@ a {
 }
 
 .contatos_container img {
-  width: 1.5vw;
+  width: 1.4vw;
   margin: 0 2%;
 }
 
@@ -344,14 +343,25 @@ a {
   color: var(--color-text-terciary);
 }
 
-#logo {
+#logo, #logo_footer {
   width: 19vw;
 }
 
+.decisao{
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.decisao button{
+  width: 20vw;
+  height: auto;
+  font-family: Poppins;
+  font-size: calc(0.6rem + 0.7vw);
+}
 
 /*media queries*/
 @media (max-width: 992px) {
-
   .navbar .links,
   .navbar #register {
     display: none;
@@ -365,7 +375,12 @@ a {
     display: block;
   }
 
+  header{
+    height: 7vw;
+  }
+
   .burger_menu.open {
+    top: 7vw;
     height: 27vw;
   }
 
@@ -373,8 +388,8 @@ a {
     text-align: left;
   }
 
-  #logo {
-    width: 24vw;
+  #logo, #logo_footer {
+    width: 26vw;
   }
 
   #campo_pesquisa{
@@ -403,15 +418,15 @@ a {
   .contatos_container li {
     font-size: calc(0.8rem + 0.5vw);
   }
-  #logo_footer{
-    height: 7vw;
-  }
 
+  .decisao button{
+    width: 30vw;
+  }
 }
 
 
 @media (max-width: 768px) {
-  #logo {
+  #logo, #logo_footer {
     width: 30vw;
   }
 
@@ -428,12 +443,7 @@ a {
     align-items: center;
   }
 
-  #logo_footer{
-    height: 6vh;
-  }
-
   .perguntas_frequentes_container a {
-    font-size: 0.7rem;
     width: 30vw;
   }
 
@@ -452,6 +462,9 @@ a {
 
   .burger_menu {
     top: 8vw;
+  }
+  .decisao button{
+    width: 33vw;
   }
 }
 
@@ -489,17 +502,13 @@ a {
     margin-bottom: 20px;
   }
 
-  #logo {
+  #logo, #logo_footer {
     width: 36vw;
   }
 
   #campo_pesquisa{
     margin-top: 2%;
     width: 55%;
-  }
-
-  #logo_footer{
-    height: 8vw;
   }
 
   .footer_container{
@@ -525,5 +534,13 @@ a {
   .perguntas_frequentes_container a {
     font-size: 0.5rem;
     width: 30vw;
+  }
+
+  .decisao{
+    flex-direction: column;
+  }
+
+  .decisao button{
+    width: 40vw;
   }
 }
