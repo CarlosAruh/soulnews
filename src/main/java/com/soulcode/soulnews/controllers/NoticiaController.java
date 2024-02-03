@@ -93,7 +93,7 @@ public class NoticiaController {
 
 		if (noticiaOpt.isPresent()) {
 			Noticia noticia = noticiaOpt.get();
-			ModelAndView mv = new ModelAndView("noticia-atualizar");
+			ModelAndView mv = new ModelAndView("editar-noticia");
 			mv.addObject("noticia", noticia);
 			return mv;
 		} else {
