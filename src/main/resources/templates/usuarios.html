@@ -2,76 +2,45 @@
 <html lang="pt-br">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>SoulNews - Usuarios</title>
-	<link rel="stylesheet" href="/css/styles.css" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Jonatas de Assis">
+	<title> Acesso ao Site</title>
+	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="..css/loginstyle.css">
 </head>
 
 <body>
-	<main>
-		<a href="/home">&#9666; Home</a>
-		<h1>Usuarios</h1>
-		<p>Lista de usuarios.</p>
-		<hr />
-		<table>
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>Email</th>
-					<th>Data de Nascimento</th>
-					<th>Telefone</th>
-					<th>CPF</th>
-					<th>Excluir</th>
-					<th>Editar</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="usuario : ${listaUsuarios}">
-					<td>
-						<a th:href="'/usuarios/'+${usuario.idUsuario}" th:text="${usuario.nome}">
-						</a>
-					</td>
-					<td th:text="${usuario.email}"></td>
-					<td th:text="${#temporals.format(usuario.dataNascimento, 'dd/MM/yyyy')}"></td>
-					<td th:text="${usuario.telefone}"></td>
-					<td th:text="${usuario.cpf}"></td>
-					<td>
-						<form action="/usuarios/delete" method="post">
-							<input type="hidden" name="id" th:value="${usuario.idUsuario}" />
-							<button type="submit">Excluir</button>
-						</form>
-					</td>
-					<td>
-						<a th:href="'/usuarios/'+${usuario.idUsuario}+'/edit'">
-							<button>Editar</button>
-						</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<hr />
-		<h2>Novo Cliente</h2>
-		<form action="/usuarios/create" method="post">
-			<label for="nome">Nome <span style="color: red">*</span></label>
-			<input type="text" name="nome" id="nome" maxlength="120" required />
+	<main class="wrapper">
+		<div th:replace="~{/fragmentos::cabecalho_dois}"></div>
+		<section class="container_form">
+			<h1>Novo usuário</h1>
+			<form class="form" action="usuario/create" method="post">
 
-			<label for="email">Email<span style="color: red">*</span></label>
-			<input type="text" name="email" id="email" maxlength="80" required />
+				<label for="nome">Nome:<span style="color: red">*</span></label>
+				<input type="text" name="nome" id="nome" placeholder="Digite seu nome completo"  maxlength="60" required />
 
-			<label for="dataNascimento">Data de Nascimento<span style="color: red">*</span></label>
-			<input type="date" name="dataNascimento" id="dataNascimento" required>
+				<label for="email">Email:<span style="color: red">*</span></label>
+				<input type="email" name="email" id="email" placeholder="example@gmail.com" maxlength="120">
 
-			<label for="telefone">Telefone<span style="color: red">*</span></label>
-			<input type="text" name="telefone" id="telefone" maxlength="40" required />
+				<label for="senha">Senha:<span style="color: red">* </span></label>
+				<input type="password" name="senha" id="senha" placeholder="Digite uma senha forte" maxlength="16" required />
 
-			<label for="cpf">CPF<span style="color: red">*</span></label>
-			<input type="text" name="cpf" id="cpf" required />
+				<label for="data_nascimento">Data de Nascimento:<span style="color: red">*</span></label>
+				<input type="date" name="data_nascimento" id="data_nascimento"   maxlength="10" required />
 
-			<button type="submit">Enviar</button>
-		</form>
+				<label for="telefone">Telefone:<span style="color: red">*</span></label>
+				<input type="tel" name="telefone" id="telefone" placeholder="Digite seu número" maxlength="42" required />
+
+				<label for="cpf">CPF:<span style="color: red">*</span></label>
+				<input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF"  maxlength="42" required />
+
+
+				<p>Campos preenchidos com <span style="color: red">*</span> são obrigatórios. </p>
+				<button type="submit">Salvar</button>
+			</form>
+		</section>
+		<div th:replace="~{/fragmentos::footer}"></div>
 	</main>
-	<script src="/js/main.js"></script>
 </body>
-
 </html>

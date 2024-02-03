@@ -9,3 +9,22 @@ BurgerBtn.onclick = function () {
         ? 'fa-solid fa-xmark'
         : 'fa-solid fa-bars'
 }
+
+
+
+const form = document.getElementById("contactForm");
+const statusMessage = document.getElementById("status");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    try {
+        // Simulate sending data to server (you can replace this with an actual API call)
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        statusMessage.textContent = "Mensagem enviada com sucesso!";
+        statusMessage.style.color = "green";
+    } catch (error) {
+        statusMessage.textContent = "Erro ao enviar a mensagem. Tente novamente mais tarde.";
+        statusMessage.style.color = "red";
+    }
+});
