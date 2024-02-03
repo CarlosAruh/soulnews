@@ -359,6 +359,9 @@ a {
   font-family: Poppins;
   font-size: calc(0.6rem + 0.7vw);
 }
+.decisao a{
+  margin: 1% 5%;
+}
 
 /*media queries*/
 @media (max-width: 992px) {
@@ -385,7 +388,7 @@ a {
   }
 
   .burger_menu .icons {
-    text-align: left;
+    text-align: center;
   }
 
   #logo, #logo_footer {
