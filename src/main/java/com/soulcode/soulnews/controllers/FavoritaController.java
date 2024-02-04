@@ -33,27 +33,30 @@ public class FavoritaController {
 	private NoticiaRepository noticiaRepository;
 
 	// CREATE
+	// CREATE
 	@PostMapping("/favoritas/create")
-	public String createNoticiaFavorita(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia,
-			Favorita favorita) {
-		try {
-			Optional<Usuario> usuarioOpt = usuarioRepository.findById(idUsuario);
-			Optional<Noticia> noticiaOpt = noticiaRepository.findById(idNoticia);
-			if (usuarioOpt.isPresent() && noticiaOpt.isPresent()) {
-				Usuario usuario = usuarioOpt.get();
-				Noticia noticia = noticiaOpt.get();
+	public String createNoticiaFavorita(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia) {
+	    try {
+	        Optional<Usuario> usuarioOpt = usuarioRepository.findById(idUsuario);
+	        Optional<Noticia> noticiaOpt = noticiaRepository.findById(idNoticia);
 
-				favorita.setUsuario(usuario);
-				favorita.setNoticiasFav(noticia);
+	        if (usuarioOpt.isPresent() && noticiaOpt.isPresent()) {
+	            Usuario usuario = usuarioOpt.get();
+	            Noticia noticia = noticiaOpt.get();
 
-				favoritaRepository.save(favorita);
-			}
-
-		} catch (Exception ex) {
-			return "erro";
-		}
-		return "redirect:/favoritas";
+	            if (!favoritaRepository.existsByUsuarioAndNoticiasFav(usuario, noticia)) {
+	                Favorita favorita = new Favorita();
+	                favorita.setUsuario(usuario);
+	                favorita.setNoticiasFav(noticia);
+	                favoritaRepository.save(favorita);
+	            }
+	        }
+	    } catch (Exception ex) {
+	        return "erro";
+	    }
+	    return "redirect:/favoritas";
 	}
+
 
 	// READ
 	@GetMapping("/favoritas")

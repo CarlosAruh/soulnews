@@ -26,4 +26,24 @@ public interface NoticiaRepository extends JpaRepository<Noticia, Integer> {
 
 	 @Query("SELECT n FROM Noticia n WHERE n.dataPublicacao > :dataInicial")
 	 List<Noticia> searchByDate(@Param("dataInicial") LocalDate dataInicial);
+	 
+	 @Query("SELECT n FROM Noticia n WHERE " +
+	           "n.topico LIKE %:term%")
+	    List<Noticia> searchTopic(@Param("term") String topic);
+	 
+	 @Query("SELECT n FROM Noticia n WHERE " +
+	           "n.titulo LIKE %:term%")
+	    List<Noticia> searchTitle(@Param("term") String title);
+	 
+	 @Query("SELECT n FROM Noticia n WHERE " +
+			   "n.conteudo LIKE %:term%")
+	    List<Noticia> searchContent(@Param("term") String content);
+	 
+	 @Query("SELECT n FROM Noticia n WHERE " +
+			   "n.categoria LIKE %:term%")
+	    List<Noticia> searchCategory(@Param("term") String category);
+	 
+	 @Query("SELECT n FROM Noticia n WHERE " +
+			   "n.fonte LIKE %:term%")
+	    List<Noticia> searchSource(@Param("term") String source);
 }

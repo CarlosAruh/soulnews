@@ -49,5 +49,55 @@ public class SearchController {
     
         return modelAndView;
     }
+	
+	//aqui
+	@GetMapping("/noticias-topico")
+    public ModelAndView searchTopicos(@RequestParam String topic, Model model) {
+        List<Noticia> noticias = noticiaRepository.search(topic);
 
+        ModelAndView modelAndView = new ModelAndView("noticia-pesquisa"); 
+        modelAndView.addObject("noticias", noticias);
+
+        return modelAndView;
+    }
+	
+	@GetMapping("/noticias-titulo")
+    public ModelAndView searchTitulos(@RequestParam String title, Model model) {
+        List<Noticia> noticias = noticiaRepository.search(title);
+
+        ModelAndView modelAndView = new ModelAndView("noticia-pesquisa"); 
+        modelAndView.addObject("noticias", noticias);
+
+        return modelAndView;
+    }
+
+	@GetMapping("/noticias-conteudos")
+    public ModelAndView searchConteudos(@RequestParam String content, Model model) {
+        List<Noticia> noticias = noticiaRepository.search(content);
+
+        ModelAndView modelAndView = new ModelAndView("noticia-pesquisa"); 
+        modelAndView.addObject("noticias", noticias);
+
+        return modelAndView;
+    }
+	
+	@GetMapping("/noticias-categoria")
+    public ModelAndView searchCategorias(@RequestParam String category, Model model) {
+        List<Noticia> noticias = noticiaRepository.search(category);
+
+        ModelAndView modelAndView = new ModelAndView("noticia-pesquisa"); 
+        modelAndView.addObject("noticias", noticias);
+
+        return modelAndView;
+    }
+	
+	@GetMapping("/noticias-fonte")
+    public ModelAndView searchFontes(@RequestParam String source, Model model) {
+        List<Noticia> noticias = noticiaRepository.search(source);
+
+        ModelAndView modelAndView = new ModelAndView("noticia-pesquisa"); 
+        modelAndView.addObject("noticias", noticias);
+
+        return modelAndView;
+    }
 }
