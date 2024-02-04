@@ -1,17 +1,18 @@
-const BurgerBtn = document.querySelector('.burger_btn');
-const BurgerBtnIcon = document.querySelector('.burger_btn i');
-const BurgerMenu = document.querySelector('.burger_menu');
-
-let idUsuario = document.querySelector('#inputIdUsuario');
-let idNoticia = document.querySelector('#inputIdNoticia');
-
-BurgerBtn.onclick = function () {
-    BurgerMenu.classList.toggle('open');
-    const isOpen = BurgerMenu.classList.contains('open');
-    BurgerBtnIcon.classList = isOpen
-        ? 'fa-solid fa-xmark'
-        : 'fa-solid fa-bars'
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const BurgerBtns = document.querySelectorAll('.burger_btn');
+  
+    BurgerBtns.forEach(function (BurgerBtn) {
+      BurgerBtn.addEventListener('click', function () {
+        const BurgerMenu = this.closest('.navbar').querySelector('.burger_menu');
+        const BurgerBtnIcon = this.querySelector('i');
+  
+        BurgerMenu.classList.toggle('open');
+        const isOpen = BurgerMenu.classList.contains('open');
+        BurgerBtnIcon.classList.toggle('fa-bars', !isOpen);
+        BurgerBtnIcon.classList.toggle('fa-xmark', isOpen);
+      });
+    });
+  });
 
 document.getElementById('imagemInput').addEventListener('change', function(event) {
         var fileName = event.target.value.split('\\').pop();
@@ -25,7 +26,6 @@ form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
     try {
-        // Simulate sending data to server (you can replace this with an actual API call)
         await new Promise((resolve) => setTimeout(resolve, 1000));
         statusMessage.textContent = "Mensagem enviada com sucesso!";
         statusMessage.style.color = "green";
@@ -34,7 +34,6 @@ form.addEventListener("submit", async (e) => {
         statusMessage.style.color = "red";
     }
 });
-
 
 function handleEnter(event, formId) {
     if (event.key === "Enter") {

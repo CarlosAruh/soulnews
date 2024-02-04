@@ -15,14 +15,13 @@
     <main class="wrapper">
         <div th:replace="~{/fragmentos::cabecalho}"></div>
         <section class="container_tela_principal">
-
             <section class="titulo_principal_container">
-                <h1>Todas notícias</h1>
-                <form id="searchTermForm" action="/search/noticias-busca" method="get">
-                    <div>
-                        <input type="text" class="form-control" id="campo_pesquisa" name="term" placeholder="Digite o termo de pesquisa" onkeydown="return handleEnter(event, 'searchTermForm')">
-                    </div>
-                </form>         
+                <form id="searchTermForm" action="/search/noticias-busca" method="get" class="campo_pesquisa">
+                    <h1>Todas notícias</h1>
+                    <input type="text" class="form-control" id="campo_pesquisa" name="term"
+                        placeholder="Digite o termo de pesquisa"
+                        onkeydown="return handleEnter(event, 'searchTermForm')">
+                </form>
             </section>
 
             <hr /> <br /> <br />
