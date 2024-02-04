@@ -17,8 +17,11 @@
         <section class="container_tela_principal">
             <section class="titulo_principal_container">
                 <h1>Gerencie suas notícias</h1>
-                <a href="/criar-noticia" class="criar_noticia"> <img src="/img/tasks.svg"/> Criar notícia</a>
+                <a href="/criar-noticia" class="criar_noticia"> <img src="/img/icones/tasks.svg"/> Criar notícia</a>
             </section>
+
+            <hr /> <br /> <br />
+            
             <section class="card_container">
                 <div class="card" th:each="noticia : ${listaNoticias}">
                     <div class="imagem_noticia_container">

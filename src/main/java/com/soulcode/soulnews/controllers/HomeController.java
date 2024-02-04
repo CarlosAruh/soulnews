@@ -27,4 +27,19 @@ public class HomeController {
     public String paginaCriarNoticia() {
         return "criar-noticia";
     }
+
+	@GetMapping("/enviar-mensagem")
+    public String paginaEnviarMensagem() {
+        return "enviar-mensagem";
+    }
+
+	@GetMapping("/perguntas-frequentes")
+    public String paginaPerguntasFrequentes() {
+        return "perguntas-frequentes";
+    }
+
+	@GetMapping("/erro")
+    public String paginaDeErro() {
+        return "erro";
+    }
 }

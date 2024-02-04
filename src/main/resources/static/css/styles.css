@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  outline: none;
-}
-
 :root {
   --color-title-primary: #02234D;
   --color-title-secondary: #0C0C34;
@@ -19,6 +12,13 @@
   --background-hover: #4747c2;
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
 body {
   width: 100%;
   height: 100vh;
@@ -26,11 +26,11 @@ body {
 }
 
 header {
+  background-color: var(--background-menus);
   position: relative;
   display: flex;
   align-items: center;
   padding: 0 1.5rem;
-  background-color: var(--background-menus);
   height: 6vw;
 }
 
@@ -73,7 +73,6 @@ li {
   width: 100%;
   position: relative;
 }
-
 
 .navbar,
 .links {
@@ -263,7 +262,7 @@ li {
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   gap: 2vw;
-  margin-bottom: 5vw;
+  margin: 2vw 5vw 5vw 0;
 }
 
 .card {
@@ -309,14 +308,6 @@ li {
   margin: 1vw;
 }
 
-.topico_detalhes {
-  font-family: Roboto;
-  color: var(--color-title-primary);
-  font-size: calc(1rem + 0.5vw);
-  text-align: center;
-  margin-bottom: 2vw;
-}
-
 .card_container_detalhe {
   display: flex;
   flex-direction: column;
@@ -333,6 +324,7 @@ li {
   padding: 2% 6%;
   overflow: hidden;
   margin-top: 6vw;
+  margin-bottom: 6vw;
 }
 
 .card_detalhe h1 {
@@ -340,6 +332,13 @@ li {
   font-size: calc(1.2rem + 1vw);
   margin-bottom: 1vw;
   text-align: center;
+}
+
+.card_erro_faq {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2vw;
 }
 
 .imagem_noticia_container img {
@@ -365,6 +364,14 @@ li {
 
 .resumo {
   margin: 1vw;
+}
+
+.topico_detalhes {
+  font-family: Roboto;
+  color: var(--color-title-primary);
+  font-size: calc(1rem + 0.5vw);
+  text-align: center;
+  margin-bottom: 2vw;
 }
 
 .fonte_data_container {
@@ -427,7 +434,11 @@ button {
   align-items: center;
   overflow: hidden;
   justify-content: space-between;
-  padding: 5vw 6vw;
+  padding: 6vw;
+}
+
+.footer_container h1 {
+  font-size: calc(1rem + 0.5vw);
 }
 
 #logo_footer {
@@ -477,7 +488,7 @@ button {
   margin: 0 2%;
 }
 
-.contatos_container span {
+.contatos_container a {
   color: var(--background-hover);
 }
 
@@ -547,7 +558,7 @@ button {
   }
 
   .card {
-    width: 35vw;
+    width: 40vw;
   }
 
   .contatos_container h1 {
@@ -579,7 +590,7 @@ button {
   }
 
   .card {
-    width: 40vw;
+    width: 45vw;
   }
 
   .footer_container {
@@ -685,10 +696,11 @@ button {
   .card_container {
     grid-template-columns: 1fr;
     justify-items: center;
+    padding-bottom: 10vw;
   }
 
   .card {
-    width: 60vw;
+    width: 70vw;
     margin-bottom: 20px;
   }
 
