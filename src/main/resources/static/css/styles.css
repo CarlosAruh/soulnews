@@ -119,7 +119,7 @@ li {
 }
 
 .burger_menu.open {
-  height: 50vh;
+  height: 20vh;
   padding: 3% 5% 1% 5%;
 }
 
@@ -232,6 +232,14 @@ li {
   border-radius: 15px;
 }
 
+#campo_pesquisa_avancada {
+  width: 100%;
+  font-size: 1vw;
+  height: 4vw;
+  padding: 2vw;
+  margin-bottom: 2vw;
+}
+
 /*Inicio estilo tela principal*/
 .container_tela_principal {
   margin: 5vh 3vw;
@@ -277,6 +285,7 @@ li {
 }
 
 .card {
+  position: relative;
   width: 30vw;
   margin-top: 2.5vw;
   background-color: var(--backgound-card);
@@ -387,6 +396,7 @@ li {
 
 .fonte_data_container {
   margin: 1vw;
+  padding-bottom: 5vw;
 }
 
 .fonte_data_container span {
@@ -403,9 +413,11 @@ li {
 }
 
 .button_container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   display: flex;
   align-items: center;
-  justify-content: right;
   gap: 2%;
   margin: 2vw;
 }
@@ -422,16 +434,17 @@ button {
 }
 
 .salvar_favoritar_icones_container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   display: flex;
-  justify-content: right;
   align-items: center;
-  height: 6vw;
-  gap: 2vw;
-  padding: 2vw;
+  gap: 20%;
+  margin: 2vw;
 }
 
 .salvar_favoritar_icones_container img {
-  height: 100%;
+  width: 3vw;
 }
 
 .footer_container {
@@ -521,8 +534,6 @@ button {
   .salvar_favoritar_icones_container img {
     height: 4vw;
   }
-
-
 }
 
 /*media queries*/
@@ -553,7 +564,7 @@ button {
   }
 
   .burger_menu.open {
-    height: 30vw;
+    height: 24vw;
   }
 
   .burger_menu .icons {
@@ -691,6 +702,10 @@ button {
     height: 10vw;
   }
 
+  .navbar {
+    right: 0;
+  }
+
   .titulo_principal_container h1 {
     font-size: calc(0.7rem + 2vw);
   }
@@ -710,7 +725,6 @@ button {
   }
 
   .burger_menu.open {
-    height: 50vw;
     width: 100%;
     background-color: var(--background-menus);
     border-radius: 4px;
@@ -741,7 +755,6 @@ button {
   }
 
   #logo {
-    padding-left: 10vw;
     width: 36vw;
   }
 

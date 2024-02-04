@@ -14,42 +14,38 @@
 <body>
     <main class="wrapper">
         <div th:replace="~{/fragmentos::cabecalho_dois}"></div>
-        <section class="form_container form">
-            <form id="searchTitleForm" action="/search/noticias-data" method="get">
-                <div>
+        <section class="container_form">
+            <div class="form">
+                <form id="searchTitleForm" action="/search/noticias-titulo" method="get">
                     <label>Pesquisa por título:</label>
-                    <input type="text" class="form-control" id="campo_pesquisa" name="dataInicial"
-                        placeholder="Digite o título da notícia" onkeydown="return handleEnter(event, 'searchTitleForm')">
-                </div>
-            </form>
-            <form id="searchTopicForm" action="/search/noticias-data" method="get">
-                <div>
+                    <input type="text" class="form-control" id="campo_pesquisa_avancada" name="title"
+                        placeholder="Digite o título da notícia"
+                        onkeydown="return handleEnter(event, 'searchTitleForm')">
+                </form>
+                <form id="searchTopicForm" action="/search/noticias-topico" method="get">
                     <label>Pesquisa por tópico:</label>
-                    <input type="text" class="form-control" id="campo_pesquisa" name="dataInicial"
-                        placeholder="Digite o tópico da notícia" onkeydown="return handleEnter(event, 'searchTopicForm')">
-                </div>
-            </form>
-            <form id="searchCategoryForm" action="/search/noticias-data" method="get">
-                <div>
+                    <input type="text" class="form-control" id="campo_pesquisa_avancada" name="topic"
+                        placeholder="Digite o tópico da notícia"
+                        onkeydown="return handleEnter(event, 'searchTopicForm')">
+                </form>
+                <form id="searchCategoryForm" action="/search/noticias-categoria" method="get">
                     <label>Pesquisa por categoria:</label>
-                    <input type="text" class="form-control" id="campo_pesquisa" name="dataInicial"
-                        placeholder="Digite a categoria da notícia" onkeydown="return handleEnter(event, 'searchCategoryForm')">
-                </div>
-            </form>
-            <form id="searchDateForm" action="/search/noticias-data" method="get">
-                <div>
+                    <input type="text" class="form-control" id="campo_pesquisa_avancada" name="category"
+                        placeholder="Digite a categoria da notícia"
+                        onkeydown="return handleEnter(event, 'searchCategoryForm')">
+                </form>
+                <form id="searchDateForm" action="/search/noticias-data" method="get">
                     <label>Pesquisa por data:</label>
-                    <input type="text" class="form-control" id="campo_pesquisa" name="dataInicial"
-                        placeholder="exemplo: yyyy-mm-dd" onkeydown="return handleEnter(event, 'searchDateForm')">
-                </div>
-            </form>
-            <form id="searchSrcForm" action="/search/noticias-data" method="get">
-                <div>
+                    <input type="text" class="form-control" id="campo_pesquisa_avancada" name="dataInicial"
+                    placeholder="exemplo: dd/MM/yyyy" onkeydown="return handleEnter(event, 'searchDateForm')">
+                </form>
+                <form id="searchSrcForm" action="/search/noticias-fonte" method="get">
                     <label>Pesquisa por fonte de notícia:</label>
-                    <input type="text" class="form-control" id="campo_pesquisa" name="dataInicial"
-                        placeholder="Digite uma fonte de notícia" onkeydown="return handleEnter(event, 'searchSrcForm')">
-                </div>
-            </form>
+                    <input type="text" class="form-control" id="campo_pesquisa_avancada" name="source"
+                        placeholder="Digite uma fonte de notícia"
+                        onkeydown="return handleEnter(event, 'searchSrcForm')">
+                </form>
+            </div>
         </section>
         <div th:replace="~{/fragmentos::footer}"></div>
     </main>

@@ -27,7 +27,7 @@ public class SearchController {
     public ModelAndView searchNoticias(@RequestParam String term, Model model) {
         List<Noticia> noticias = noticiaRepository.search(term);
 
-        ModelAndView modelAndView = new ModelAndView("noticia-pesquisa"); // Substitua "nomeDaSuaPagina" pelo nome real da sua página HTML.
+        ModelAndView modelAndView = new ModelAndView("noticia-pesquisa");
         modelAndView.addObject("noticias", noticias);
 
         return modelAndView;
@@ -52,8 +52,8 @@ public class SearchController {
 	
 	//aqui
 	@GetMapping("/noticias-topico")
-    public ModelAndView searchTopicos(@RequestParam String term, Model model) {
-        List<Noticia> noticias = noticiaRepository.search(term);
+    public ModelAndView searchTopicos(@RequestParam String topic, Model model) {
+        List<Noticia> noticias = noticiaRepository.search(topic);
 
         ModelAndView modelAndView = new ModelAndView("noticia-pesquisa"); 
         modelAndView.addObject("noticias", noticias);
@@ -62,8 +62,8 @@ public class SearchController {
     }
 	
 	@GetMapping("/noticias-titulo")
-    public ModelAndView searchTitulos(@RequestParam String term, Model model) {
-        List<Noticia> noticias = noticiaRepository.search(term);
+    public ModelAndView searchTitulos(@RequestParam String title, Model model) {
+        List<Noticia> noticias = noticiaRepository.search(title);
 
         ModelAndView modelAndView = new ModelAndView("noticia-pesquisa"); 
         modelAndView.addObject("noticias", noticias);
@@ -72,8 +72,8 @@ public class SearchController {
     }
 
 	@GetMapping("/noticias-conteudos")
-    public ModelAndView searchConteudos(@RequestParam String term, Model model) {
-        List<Noticia> noticias = noticiaRepository.search(term);
+    public ModelAndView searchConteudos(@RequestParam String content, Model model) {
+        List<Noticia> noticias = noticiaRepository.search(content);
 
         ModelAndView modelAndView = new ModelAndView("noticia-pesquisa"); 
         modelAndView.addObject("noticias", noticias);
@@ -82,8 +82,8 @@ public class SearchController {
     }
 	
 	@GetMapping("/noticias-categoria")
-    public ModelAndView searchCategorias(@RequestParam String term, Model model) {
-        List<Noticia> noticias = noticiaRepository.search(term);
+    public ModelAndView searchCategorias(@RequestParam String category, Model model) {
+        List<Noticia> noticias = noticiaRepository.search(category);
 
         ModelAndView modelAndView = new ModelAndView("noticia-pesquisa"); 
         modelAndView.addObject("noticias", noticias);
@@ -92,8 +92,8 @@ public class SearchController {
     }
 	
 	@GetMapping("/noticias-fonte")
-    public ModelAndView searchFontes(@RequestParam String term, Model model) {
-        List<Noticia> noticias = noticiaRepository.search(term);
+    public ModelAndView searchFontes(@RequestParam String source, Model model) {
+        List<Noticia> noticias = noticiaRepository.search(source);
 
         ModelAndView modelAndView = new ModelAndView("noticia-pesquisa"); 
         modelAndView.addObject("noticias", noticias);

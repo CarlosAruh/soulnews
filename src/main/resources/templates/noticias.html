@@ -38,13 +38,13 @@
                             <p th:text="${noticia.fonte}"></p>
                             <span th:text="${#temporals.format(noticia.dataPublicacao)}"></span>
                         </section>
-                        <div class="button_container">
-                            <a th:href="'/noticias/'+${noticia.idNoticia}+'/edit'">Editar</a>
-                            <form action="/noticias/delete" method="post">
-                                <input type="hidden" name="id" th:value="${noticia.idNoticia}" />
-                                <button type="submit" class="">Excluir</button>
-                            </form>
-                        </div>
+                    </div>
+                    <div class="button_container">
+                        <a th:href="'/noticias/'+${noticia.idNoticia}+'/edit'">Editar</a>
+                        <form action="/noticias/delete" method="post">
+                            <input type="hidden" name="id" th:value="${noticia.idNoticia}" />
+                            <button type="submit" class="">Excluir</button>
+                        </form>
                     </div>
                 </div>
             </section>
