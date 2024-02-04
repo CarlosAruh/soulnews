@@ -1,5 +1,6 @@
 package com.soulcode.soulnews.repositories;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,5 +21,7 @@ public interface NoticiaRepository extends JpaRepository<Noticia, Integer> {
 	           "n.categoria LIKE %:term% OR " +
 	           "n.fonte LIKE %:term%")
 	    List<Noticia> search(@Param("term") String term);
+	 
+	 List<Noticia> findByDataPublicacaoBetween(LocalDate dataInicial, LocalDate dataFinal);
 
 }
