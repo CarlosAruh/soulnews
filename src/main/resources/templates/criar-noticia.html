@@ -14,21 +14,26 @@
         <section class="container_form">
             <h1>Crie uma notícia</h1>
 
-            <form action="/noticias/create" method="post" class="form">
+            <form action="/noticias/create" method="post" class="form" enctype="multipart/form-data">
 
                 <label for="titulo">Título:</label>
                 <input type="text" name="titulo" placeholder="Título da manchete" maxlength="100" required />
 
-                <label for="categoria">Imagem:</label>
-                <input type="text" name="imagem" placeholder="Link para a imagem da manchete" id="imagem"
-                    maxlength="100" required />
+                <label for="categoria">Qual a categoria da notícia?</label>
+                <input type="text" name="categoria" placeholder="Digite a categoria" id="categoria" maxlength="100" required />
 
-                <label for="categoria">Autor:</label>
-                <input type="text" name="autor" placeholder="Quem é o autor?" id="autor" maxlength="100" required />
+                <label for="topico">Qual o topíco da notícia?</label>
+                <input type="text" name="topico" placeholder="Coloque o topíco da notícia" id="topico" maxlength="100" required />
 
-                <label for="categoria">Assunto:</label>
-                <input type="text" name="assunto" placeholder="Opções" id="assunto" maxlength="100" required />
+                <label for="data">Data de publicação:</label>
+                <input type="date" name="dataPublicacao" placeholder="Quando a notícia está sendo publicada?" id="dataPublicacao" maxlength="100" required />
 
+                <label for="categoria">Fonte:</label>
+                <input type="text" name="fonte" placeholder="Qual é a fonte dessa notícia?" id="fonte" maxlength="100" required />
+
+                <label for="imagem">Imagem:</label>
+                <input type="file" id="imagemInput" name="imagem"><br />
+                <input type="hidden" id="caminhoImagem" name="caminhoImagem">
 
                 <label for="conteudo">Descrição:</label>
                 <textarea name="conteudo" placeholder="Use esse campo para descrever a notícia" id="conteudo" rows="5"

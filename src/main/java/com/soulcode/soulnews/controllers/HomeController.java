@@ -40,6 +40,17 @@ public class HomeController {
 
 	@GetMapping("/erro")
     public String paginaDeErro() {
-        return "erro";
+        
+		return "erro";
+    }
+
+	@GetMapping("/noticia-pesquisa")
+    public String paginaNoticiaPesquisa() {
+        return "noticia-pesquisa"; 
+    }
+
+	@GetMapping("/pesquisa-avancada")
+    public String paginaPesquisaAvancada() {
+        return "pesquisa-avancada"; 
     }
 }

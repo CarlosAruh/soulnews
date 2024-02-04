@@ -131,7 +131,7 @@ li {
 
 #campo_pesquisa {
   padding: 0 1.5%;
-  width: 45%;
+  width: 100%;
   height: 6vh;
   border: 0.1vw solid var(--background-button);
   color: var(--color-title-secondary);

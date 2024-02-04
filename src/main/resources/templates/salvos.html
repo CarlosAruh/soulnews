@@ -25,8 +25,7 @@
             <section class="card_container">
                 <div class="card" th:each="noticia : ${listaSalvos}">
                     <div class="imagem_noticia_container">
-                        <img
-                            src="https://imgs.search.brave.com/pOtyVe7kqdACobNkq3g4axnu4Mkl3FWG5qP8PSv8OQQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9iaXRjb2luLWNy/eXB0b2N1cnJlbmN5/LWZyZWUtcGhvdG8u/anBnP3c9NjAwJnF1/YWxpdHk9ODA" />
+                        <img th:src="@{'/' + ${noticia.caminhoImagem}}" alt="Imagem da Notícia">
                     </div>
                     <h2 th:text="${noticia.topico}"></h2>
                     <h1>

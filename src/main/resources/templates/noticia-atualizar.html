@@ -13,7 +13,7 @@
         <div th:replace="~{/fragmentos::cabecalho_dois}"></div>
         <section class="container_form">
             <h1>Edite sua notícia</h1>
-            <form action="/noticias/update" method="post" class="form">
+            <form action="/noticias/update" method="post" class="form" enctype="multipart/form-data">
                 <input type="hidden" name="idNoticia" th:value="${noticia.idNoticia}" />
 
                 <label for="titulo">Título:</label>
@@ -32,6 +32,11 @@
 
                 <label for="fonte">Fonte:</label>
                 <input th:value="${noticia.fonte}" type="text" name="fonte" id="fonte" maxlength="100" required></input>
+
+                <label for="imagem">Imagem Atual:</label>
+                <img th:src="@{'/' + ${noticia.caminhoImagem}}" alt="Imagem Atual" width="100" height="100" />
+                <label for="novaImagem">Nova Imagem</label>
+                <input type="file" name="novaImagem">
 
                 <label for="conteudo">Descrição:</label>
                 <textarea th:text="${noticia.conteudo}" name="conteudo" id="conteudo" class="textarea_container" rows="7"></textarea>

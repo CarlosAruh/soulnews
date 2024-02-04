@@ -2,6 +2,9 @@ const BurgerBtn = document.querySelector('.burger_btn');
 const BurgerBtnIcon = document.querySelector('.burger_btn i');
 const BurgerMenu = document.querySelector('.burger_menu');
 
+let idUsuario = document.querySelector('#inputIdUsuario');
+let idNoticia = document.querySelector('#inputIdNoticia');
+
 BurgerBtn.onclick = function () {
     BurgerMenu.classList.toggle('open');
     const isOpen = BurgerMenu.classList.contains('open');
@@ -15,7 +18,6 @@ document.getElementById('imagemInput').addEventListener('change', function(event
         document.getElementById('caminhoImagem').value = 'img/' + fileName;
     });
     
-
 const form = document.getElementById("contactForm");
 const statusMessage = document.getElementById("status");
 
@@ -32,3 +34,13 @@ form.addEventListener("submit", async (e) => {
         statusMessage.style.color = "red";
     }
 });
+
+
+function handleEnter(event, formId) {
+    if (event.key === "Enter") {
+        event.preventDefault(); 
+        document.getElementById(formId).submit();
+        return false;
+    }
+    return true;
+}
