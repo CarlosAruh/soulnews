@@ -154,13 +154,13 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 4vw 0 6vw 0;
+  margin: 4vw 0 20vw 0;
 }
 
 .container_form  h1 {
   font-family: Roboto;
   color: var(--color-title-secondary);
-  font-size: 2vw;
+  font-size: 3vw;
   margin-bottom: 2vw;
 }
 
@@ -168,7 +168,7 @@ li {
   background: var(--backgound-card);
   box-shadow: 1vw 1vw 3vw 0 rgba(44, 42, 42, 0.3);
   text-align: center;
-  width: 30%;
+  width: 40%;
   padding: 4vw;
   border-radius: 10px;
 }
@@ -177,7 +177,7 @@ li {
   display: block;
   margin-bottom: 0.5vw;
   text-align: left;
-  font-size: 0.9vw;
+  font-size: 1.5vw;
   font-family: Roboto;
   color: var(--color-title-secondary);
   font-weight: bold;
@@ -191,7 +191,7 @@ li {
   margin-bottom: 1vw;
   box-sizing: border-box;
   border-radius: 15px;
-  font-size: 0.7vw;
+  font-size: 1vw;
   box-sizing: border-box;
   font-family: Poppins;
 }
@@ -204,7 +204,7 @@ li {
   padding: 1vw;
   border: none;
   border-radius: 15px;
-  font-size: 1vw;
+  font-size: 1.2vw;
   cursor: pointer;
 }
 
@@ -224,7 +224,7 @@ li {
   align-items: center;
   justify-content: center;
   font-family: Poppins;
-  font-size: 0.7vw;
+  font-size: 1vw;
   color: var(--color-title-secondary);
   resize: none;
   padding: 1vw;
@@ -534,6 +534,14 @@ button {
   .salvar_favoritar_icones_container img {
     height: 4vw;
   }
+
+  .container_form h1{
+    font-size: 3vw;
+  }
+
+  .footer_container {
+    height: 20%;
+  }
 }
 
 @media (max-width: 992px) {
@@ -603,6 +611,10 @@ button {
     height: 4vw;
   }
 
+  .form {
+    width: 40%;
+  }
+
   .contatos_container h1 {
     font-size: calc(1rem + 0.5vw);
   }
@@ -617,6 +629,10 @@ button {
 
   #logo_footer {
     height: 7vw;
+  }
+
+  .footer_container {
+    height: 20%;
   }
 
 }
@@ -692,6 +708,10 @@ button {
 
   .icons img {
     width: 5vw;
+  }
+
+  .footer_container {
+    height: 20%;
   }
 }
 
