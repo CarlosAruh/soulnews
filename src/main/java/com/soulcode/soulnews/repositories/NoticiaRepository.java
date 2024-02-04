@@ -24,4 +24,6 @@ public interface NoticiaRepository extends JpaRepository<Noticia, Integer> {
 	 
 	 List<Noticia> findByDataPublicacaoBetween(LocalDate dataInicial, LocalDate dataFinal);
 
+	 @Query("SELECT n FROM Noticia n WHERE n.dataPublicacao >= :dataInicial")
+	    List<Noticia> searchByDate(@Param("dataInicial") LocalDate dataInicial);
 }

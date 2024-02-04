@@ -31,5 +31,10 @@ public class SearchController {
 	    @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataFinal) {
 	    return noticiaRepository.findByDataPublicacaoBetween(dataInicial, dataFinal);
 	}
+	
+	@GetMapping("/noticias-data")
+    public List<Noticia> searchByDate(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataInicial) {
+        return noticiaRepository.searchByDate(dataInicial);
+    }
 
 }
