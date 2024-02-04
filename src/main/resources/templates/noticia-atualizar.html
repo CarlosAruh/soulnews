@@ -13,30 +13,38 @@
 		<a href="/noticias">&#9666; Voltar</a>
 		<h1>Editar Noticia</h1>
 		<hr />
-		<form action="/noticias/update" method="post">
+		<form action="/noticias/update" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="idNoticia" th:value="${noticia.idNoticia}" />
 
-			<label for="topico">topico<span style="color: red">*</span></label>
+			<label for="topico">Tópico<span style="color: red">*</span></label>
 			<input th:value="${noticia.topico}" type="text" name="topico" id="topico" maxlength="30" required />
 
-			<label for="titulo">Titulo<span style="color: red">*</span></label>
+			<label for="titulo">Título<span style="color: red">*</span></label>
 			<input th:value="${noticia.titulo}" type="text" name="titulo" id="titulo" maxlength="100" required />
 
-			<label for="conteudo">Descrição</label>
-			<input th:value="${noticia.conteudo}" type="conteudo" name="conteudo" id="conteudo" maxlength="120" />
+			<label for="imagem">Imagem Atual</label>
+			<img th:src="@{'/' + ${noticia.caminhoImagem}}" alt="Imagem Atual" width="100" height="100" />
 
-			<label for="conteudo">Data Publicação</label>
-			<input th:value="${noticia.dataPublicacao}" type="date" name="dataPublicacao" id="dataPublicacao"
-				maxlength="120" />
+			<label for="novaImagem">Nova Imagem</label>
+			<input type="file" name="novaImagem">
+
+			<label for="conteudo">Descrição</label>
+			<input th:value="${noticia.conteudo}" type="text" name="conteudo" id="conteudo" maxlength="120" />
+
+			<label for="dataPublicacao">Data de Publicação</label>
+			<input th:value="${#temporals.format(noticia.dataPublicacao, 'yyyy-MM-dd')}" type="date"
+				name="dataPublicacao" id="dataPublicacao" />
 
 			<label for="categoria">Categoria<span style="color: red">*</span></label>
-			<input th:value="${noticia.categoria}" type="text" name="categoria" id="categoria" maxlength="30" required></input>
-			
+			<input th:value="${noticia.categoria}" type="text" name="categoria" id="categoria" maxlength="30"
+				required />
+
 			<label for="fonte">Fonte<span style="color: red">*</span></label>
-			<input th:value="${noticia.fonte}" type="text" name="fonte" id="fonte" maxlength="100" required></input>
+			<input th:value="${noticia.fonte}" type="text" name="fonte" id="fonte" maxlength="100" required />
 
 			<button type="submit">Enviar</button>
 		</form>
+
 	</main>
 	<script src="/js/main.js"></script>
 </body>

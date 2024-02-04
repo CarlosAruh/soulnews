@@ -12,7 +12,13 @@ import com.soulcode.soulnews.models.Noticia;
 @Repository
 public interface NoticiaRepository extends JpaRepository<Noticia, Integer> {
 
-	/*@Query("SELECT n FROM Noticia n JOIN n.usuariosFavoritos u WHERE u.id = :userId")
-	List<Noticia> findFavoritasByUsuario(@Param("userId") Integer userId);*/
+	 @Query("SELECT n FROM Noticia n WHERE " +
+	           "n.topico LIKE %:term% OR " +
+	           "n.titulo LIKE %:term% OR " +
+	           "n.caminhoImagem LIKE %:term% OR " +
+	           "n.conteudo LIKE %:term% OR " +
+	           "n.categoria LIKE %:term% OR " +
+	           "n.fonte LIKE %:term%")
+	    List<Noticia> search(@Param("term") String term);
 
 }

@@ -19,6 +19,7 @@
 				<tr>
 					<th>Titulo</th>
 					<th>topico</th>
+					<th>Imagem</th>
 					<th>Conteudo</th>
 					<th>Data Publicação</th>
 					<th>Categoria</th>
@@ -30,10 +31,12 @@
 			<tbody>
 				<tr th:each="noticia : ${listaNoticias}">
 					<td>
-						<a th:href="'/noticias/'+${noticia.idNoticia}" th:text="${noticia.titulo}">
-						</a>
+						<a th:href="'/noticias/'+${noticia.idNoticia}" th:text="${noticia.titulo}"></a>
 					</td>
 					<td th:text="${noticia.topico}"></td>
+					<td>
+						<img th:src="@{'/' + ${noticia.caminhoImagem}}" alt="Imagem da Notícia">
+					</td>
 					<td th:text="${noticia.conteudo}"></td>
 					<td th:text="${#temporals.format(noticia.dataPublicacao, 'dd/MM/yyyy')}"></td>
 					<td th:text="${noticia.categoria}"></td>
@@ -54,24 +57,29 @@
 		</table>
 		<hr />
 		<h2>Nova Noticia</h2>
-		<form action="/noticias/create" method="post">
+		<form id="noticiaForm" action="/noticias/create" method="post" enctype="multipart/form-data">
 			<label for="topico">topico<span style="color: red">*</span></label>
-			<input type="text" name="topico" id="topico" maxlength="30" required ></input>
-			
+			<input type="text" name="topico" id="topico" maxlength="30" required>
+
 			<label for="titulo">Titulo <span style="color: red">*</span></label>
-			<input type="text" name="titulo" id="titulo" maxlength="120" required />
+			<input type="text" name="titulo" id="titulo" maxlength="120" required>
+
+			File to upload: <input type="file" id="imagemInput" name="imagem"><br />
+			<input type="hidden" id="caminhoImagem" name="caminhoImagem">
+
+			Name: <input type="text" name="name"><br /> <br />
 
 			<label for="conteudo">Conteudo<span style="color: red">*</span></label>
-			<textarea type="text" name="conteudo" id="conteudo" maxlength="4000" required ></textarea>
+			<textarea type="text" name="conteudo" id="conteudo" maxlength="4000" required></textarea>
 
 			<label for="dataPublicacao">Data Publicação<span style="color: red">*</span></label>
 			<input type="date" name="dataPublicacao" id="dataPublicacao" required>
-			
+
 			<label for="categoria">Categoria<span style="color: red">*</span></label>
-			<input type="text" name="categoria" id="categoria" maxlength="30" required ></input>
-			
+			<input type="text" name="categoria" id="categoria" maxlength="30" required>
+
 			<label for="fonte">Fonte<span style="color: red">*</span></label>
-			<input type="text" name="fonte" id="fonte" maxlength="100" required ></input>
+			<input type="text" name="fonte" id="fonte" maxlength="100" required>
 
 			<button type="submit">Enviar</button>
 		</form>
