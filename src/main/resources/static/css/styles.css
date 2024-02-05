@@ -12,11 +12,11 @@
   --color-title-secondary: #0C0C34;
   --color-text-primary: #384252;
   --color-text-secondary: #FFFFFF;
-  --color-text-terciary: #5C5CEA;
   --color-data-text: #898C95;
   --background-menus: #D6F0E0;
   --backgound-card: #FFFFF8;
-  --backgound-button: #0C0C34;
+  --background-button: #0C0C34;
+  --background-hover: #4747c2;
 }
 
 
@@ -36,14 +36,6 @@ header {
   height: 6vw;
 }
 
-.navbar a:hover {
-  color: orangered;
-}
-
-.navbar a{
-  font-size: calc(0.6rem + 0.7vw);
-}
-
 .navbar {
   margin: 0 auto;
   display: flex;
@@ -54,26 +46,35 @@ header {
   font-weight: 500;
 }
 
-#estrela,
-#salvar,
-#casa {
-  height: calc(0.5rem + 1vw);
-  width: auto;
-  padding: 0 1px;
-  vertical-align: text-top;
+a {
+  text-decoration: none;
+  color: var(--color-title-secondary);
 }
 
-li {
-  list-style: none;
+.navbar a {
+  display: flex;
+  white-space: nowrap;
+  font-size: calc(0.6rem + 0.7vw);
+  gap: 3%;
 }
+
+.navbar a:hover {
+  color: var(--background-hover);
+}
+
+
 
 .navbar .burger_btn {
   position: absolute;
   right: 1rem;
-  color: black;
-  font-size: 1.5rem;
+  color: var(--color-title-secondary);
+  font-size: calc(1.1rem + 0.5vw);
   cursor: pointer;
   display: none;
+}
+
+li {
+  list-style: none;
 }
 
 .navbar .links {
@@ -85,22 +86,17 @@ li {
   color: var(--color-title-secondary);
 }
 
-
-.icons img {
-  margin: 0.2rem;
-  width: 3vw;
+#estrela,
+#salvar,
+#casa {
+  height: calc(0.5rem + 1vw);
+  width: auto;
+  padding: 0 1px;
+  vertical-align: text-top;
 }
 
-#campo_pesquisa {
-  padding: 0 1.5%;
-  width: 45%;
-  height: 6vh;
-  border: none;
-  border-radius: 15px;
-  background-color: whitesmoke;
-  color: var(--color-title-secondary);
-  font-size: calc(1rem + 0.5vw);
-  box-shadow: 1px 1px 3px rgb(92, 192, 179);
+.icons img {
+  width: 2.5vw;
 }
 
 .burger_menu {
@@ -109,7 +105,7 @@ li {
   right: 0;
   height: 0;
   top: 6vw;
-  width: 22vw;
+  width: 25vw;
   background-color: var(--background-menus);
   backdrop-filter: blur(15px);
   border-radius: 10px;
@@ -118,8 +114,7 @@ li {
 }
 
 .burger_menu.open {
-  height: 33vh;
-  padding: 3% 2% 1% 5%;
+  padding: 3% 5% 1% 5%;
 }
 
 .burger_menu li {
@@ -127,13 +122,90 @@ li {
   margin-bottom: 15px;
 }
 
-.forms {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+#campo_pesquisa {
+  padding: 0 1.5%;
+  width: 100%;
+  height: 6vh;
+  border: 0.1vw solid var(--background-button);
+  border-radius: 25px;
+  background-color: whitesmoke;
+  font-size: calc(1rem + 0.5vw);
+  box-shadow: 1px 1px 3px rgb(92, 192, 179);
+}
+
+.container_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vw 0 4vw 0;
+}
+
+.form {
+  background: var(--backgound-card);
+  box-shadow: 1vw 1vw 3vw 0 rgba(44, 42, 42, 0.3);
   text-align: center;
+  width: 30%;
+  padding: 4vw;
+  border-radius: 0.6vw;
+}
+
+.container_form  h1 {
+  font-family: Roboto;
+  color: var(--color-title-secondary);
+  font-size: 2vw;
+  margin-bottom: 2vw;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 0.5vw;
+  text-align: left;
+  font-size: 0.9vw;
+  font-family: Roboto;
+  color: var(--color-title-secondary);
+  font-weight: bold;
+}
+
+.form input {
+  background: none;
+  border: 1px solid var(--color-title-secondary);
+  width: 100%;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  box-sizing: border-box;
+  border-radius: 0.9vw;
+  font-size: 0.6vw;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+.form button {
+  width: 100%;
+  background-color: var(--color-title-secondary);
+  color: var(--color-text-secondary);
+  margin-top: 1vw;
+  padding: 1vw;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1vw;
+}
+
+.form button:hover {
+  background: var(background-button-hover);
+}
+
+.textarea_container {
+  background: none;
+  font-family: Poppins;
+  color: var(--color-title-secondary);
+  resize: none;
+  padding: 1vw;
+  width: 100%;
+  border-radius: 0.9vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 label {
@@ -171,12 +243,6 @@ button {
   background-color: #1e1e4e;
 }
 
-a {
-  text-decoration: none;
-  color: var(--color-title-secondary);
-}
-
-
 /*Inicio estilo tela principal*/
 .container_tela_principal {
   margin: 5vh 3vw;
@@ -198,15 +264,34 @@ a {
 
 .titulo_principal_container h1 {
   font-family: Roboto;
-  font-weight: 600;
-  font-size: calc(1rem + 2vw);
+  font-weight: bold;
+  font-size: calc(1.2rem + 1.5vw);
   color: var(--color-title-primary);
+}
+
+.criar_noticia {
+  display: flex;
+  align-items: center;
+  background: none;
+  font-family: Poppins;
+  border: 0.1vw solid var(--background-button);
+  color: var(--color-title-secondary);
+  border-radius: 2vw;
+  gap: 1vw;
+  padding: 1vw;
+  min-width: 15%;
+  font-size: calc(1rem + 0.3vw);
+}
+
+.criar_noticia img{
+  width: 2vw;
 }
 
 .card_container {
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   gap: 2vw;
+  margin: 2vw 5vw 5vw 0;
 }
 
 .card_content{
@@ -214,7 +299,7 @@ a {
 }
 
 .card {
-  width: 28vw;
+  width: 30vw;
   margin-top: 2.5vw;
   background-color: var(--backgound-card);
   box-shadow: 1vw 1vw 3vw 0 rgba(44, 42, 42, 0.3);
@@ -222,32 +307,10 @@ a {
   overflow: hidden;
 }
 
-.imagem_noticia_container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.card h2 {
-  font-family: Roboto;
-  color: var(--color-title-primary);
-  font-size: calc(1rem + 0.5vw);
-  padding: 4% 6%;
-}
-
-.card h3 {
-  margin: 3% 3%;
-  font-size: calc(0.8rem + 0.5vw);
-  font-family: Poppins;
-}
-
-.card .resumo{
+.card .resumo {
   font-family: Poppins;
   font-size: calc(0.8rem + 0.5vw);
   color: var(--color-text-primary);
-  padding: 0 1vw 0 0;
-  margin: 1vw;
   overflow: hidden;
   flex-wrap: wrap;
   text-overflow: ellipsis;
@@ -256,20 +319,58 @@ a {
   -webkit-box-orient: vertical;
 }
 
-.card span{
+.card h1 {
+  font-size: calc(1.2rem + 0.5vw);
   font-family: Poppins;
-  color: var(--color-data-text);
-  font-size: calc(0.8rem + 0.5vw);
-  padding: 0 2vw;
+  color: var(--color-title-secondary);
+  margin: 1vw;
 }
 
-.card p{
+.card p {
   font-family: Poppins;
   font-size: calc(0.8rem + 0.5vw);
   color: var(--color-text-primary);
-  padding: 1vw 2vw;
 }
 
+.card h2 {
+  font-family: Roboto;
+  color: var(--color-title-primary);
+  font-size: calc(0.6rem + 0.5vw);
+  margin: 1vw;
+}
+
+.card_container_detalhe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_detalhe {
+  background-color: var(--backgound-card);
+  box-shadow: 1vw 1vw 3vw 0 rgba(44, 42, 42, 0.3);
+  width: 70%;
+  height: auto;
+  border-radius: 1vw;
+  padding: 2% 6%;
+  overflow: hidden;
+  margin-top: 6vw;
+  margin-bottom: 6vw;
+}
+
+.card_detalhe h1 {
+  color: var(--color-title-secondary);
+  font-size: calc(1.2rem + 1vw);
+  margin-bottom: 1vw;
+  text-align: center;
+}
+
+.card_erro_faq {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2vw;
+}
 .salvar_favoritar_icones_container {
   display: flex;
   justify-content: left;
@@ -389,7 +490,7 @@ a {
 
   .burger_menu.open {
     top: 7vw;
-    height: 27vw;
+    height: 30vw;
   }
 
   .burger_menu .icons {
