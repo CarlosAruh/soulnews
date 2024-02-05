@@ -1,11 +1,9 @@
 package com.soulcode.soulnews.controllers;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -90,7 +88,6 @@ public class FavoritaController {
 	// Update
 	@PostMapping("/favoritas/update")
 	public String updateNoticiasFavoritas(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia,
-			@RequestParam(name = "dataAdicao") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataAdicao,
 			Favorita favorita) {
 
 		try {
@@ -105,7 +102,6 @@ public class FavoritaController {
 
 				existingFavorita.setUsuario(usuario);
 				existingFavorita.setNoticiasFav(noticia);
-				existingFavorita.setDataAdicao(dataAdicao);
 
 				favoritaRepository.save(existingFavorita);
 			}

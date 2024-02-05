@@ -1,11 +1,9 @@
 package com.soulcode.soulnews.controllers;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,11 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.soulcode.soulnews.models.Salvo;
 import com.soulcode.soulnews.models.Noticia;
+import com.soulcode.soulnews.models.Salvo;
 import com.soulcode.soulnews.models.Usuario;
-import com.soulcode.soulnews.repositories.SalvoRepository;
 import com.soulcode.soulnews.repositories.NoticiaRepository;
+import com.soulcode.soulnews.repositories.SalvoRepository;
 import com.soulcode.soulnews.repositories.UsuarioRepository;
 
 @Controller
@@ -34,8 +32,7 @@ public class SalvoController {
 
 	// CREATE
 	@PostMapping("/salvos/create")
-	public String createNoticiaSalvo(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia,
-			Salvo salvo) {
+	public String createNoticiaSalvo(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia, Salvo salvo) {
 		try {
 			Optional<Usuario> usuarioOpt = usuarioRepository.findById(idUsuario);
 			Optional<Noticia> noticiaOpt = noticiaRepository.findById(idNoticia);
@@ -89,9 +86,7 @@ public class SalvoController {
 
 	// Update
 	@PostMapping("/salvos/update")
-	public String updateNoticiasSalvos(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia,
-			@RequestParam(name = "dataAdicao") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataAdicao,
-			Salvo salvo) {
+	public String updateNoticiasSalvos(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia, Salvo salvo) {
 
 		try {
 			Optional<Salvo> existingSalvoOpt = salvoRepository.findById(salvo.getIdSalvo());
@@ -105,7 +100,6 @@ public class SalvoController {
 
 				existingSalvo.setUsuario(usuario);
 				existingSalvo.setNoticiasSalvo(noticia);
-				existingSalvo.setDataAdicao(dataAdicao);
 
 				salvoRepository.save(existingSalvo);
 			}

@@ -10,6 +10,6 @@ import com.soulcode.soulnews.models.Usuario;
 
 @Repository
 public interface FavoritaRepository extends JpaRepository<Favorita, Integer> {
-	
-	 List<Favorita> findByUsuario(Usuario usuario);
+
+	List<Favorita> findByUsuario(Usuario usuario);
 }

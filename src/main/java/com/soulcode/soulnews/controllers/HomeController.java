@@ -24,33 +24,33 @@ public class HomeController {
 	}
 
 	@GetMapping("/criar-noticia")
-    public String paginaCriarNoticia() {
-        return "criar-noticia";
-    }
+	public String paginaCriarNoticia() {
+		return "criar-noticia";
+	}
 
 	@GetMapping("/enviar-mensagem")
-    public String paginaEnviarMensagem() {
-        return "enviar-mensagem";
-    }
+	public String paginaEnviarMensagem() {
+		return "enviar-mensagem";
+	}
 
 	@GetMapping("/perguntas-frequentes")
-    public String paginaPerguntasFrequentes() {
-        return "perguntas-frequentes";
-    }
+	public String paginaPerguntasFrequentes() {
+		return "perguntas-frequentes";
+	}
 
 	@GetMapping("/erro")
-    public String paginaDeErro() {
-        
+	public String paginaDeErro() {
+
 		return "erro";
-    }
+	}
 
 	@GetMapping("/noticia-pesquisa")
-    public String paginaNoticiaPesquisa() {
-        return "noticia-pesquisa"; 
-    }
+	public String paginaNoticiaPesquisa() {
+		return "noticia-pesquisa";
+	}
 
 	@GetMapping("/pesquisa-avancada")
-    public String paginaPesquisaAvancada() {
-        return "pesquisa-avancada"; 
-    }
+	public String paginaPesquisaAvancada() {
+		return "pesquisa-avancada";
+	}
 }

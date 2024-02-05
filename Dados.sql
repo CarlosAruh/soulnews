@@ -1,4 +1,3 @@
-drop database noticias_db;
 
 use noticias_db;
 

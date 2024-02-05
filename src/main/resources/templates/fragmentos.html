@@ -2,104 +2,105 @@
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <title>Soulcode</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/styles.css">
+	<title>Soulcode</title>
 </head>
 
 <body>
-    <header th:fragment="cabecalho">
-        <nav class="navbar">
-            <a href="/">
-                <img id="logo" src="/img/icones/logo.svg" alt="logo Soul News" />
+	<header th:fragment="cabecalho">
+		<nav class="navbar">
+			<a href="/">
+				<img id="logo" src="/img/icones/logo.svg" alt="logo Soul News" />
 
-                <ul class="links">
-                    <li><a href="/favoritas"> <img id="estrela" src="/img/icones/star_yellow.svg"> Favoritos</a></li>
-                    <li><a href="/salvos"> <img id="salvar" src="/img/icones/save_yellow.svg">Salvos</a></li>
-                    <div class="icons">
-                        <a href="/usuarios" style="margin-right: 10px;"><img src="/img/icones/user.svg" /></a>
-                    </div>
-                </ul>
-                <div class="burger_btn"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                <div class="burger_menu">
-                    <li> <a href="/favoritas"><img id="estrela" src="/img/icones/star_yellow.svg">Favoritos</a>
-                    <li><a href="/salvos"><img id="salvar" src="/img/icones/save_yellow.svg"> Salvos</a>
-                    <li>
-                        <div class="icons">
-                            <a href="/usuarios" style="margin-right: 10px;"><img src="/img/icones/user.svg" /></a>
-                        </div>
-                    </li>
-                </div>
-        </nav>
-    </header>
-    <header th:fragment="cabecalho_dois">
-        <nav class="navbar">
-            <a href="/">
-                <img id="logo" src="/img/icones/logo.svg" alt="logo Soul News" />
+				<ul class="links">
+					<li><a href="/favoritas"> <img id="estrela" src="/img/icones/star_yellow.svg"> Favoritos</a></li>
+					<li><a href="/salvos"> <img id="salvar" src="/img/icones/save_yellow.svg">Salvos</a></li>
+					<div class="icons">
+						<a href="/usuarios" style="margin-right: 10px;"><img src="/img/icones/user.svg" /></a>
+					</div>
+				</ul>
+				<div class="burger_btn"><i class="fa fa-bars" aria-hidden="true"></i></div>
+				<div class="burger_menu">
+					<li> <a href="/favoritas"><img id="estrela" src="/img/icones/star_yellow.svg">Favoritos</a>
+					<li><a href="/salvos"><img id="salvar" src="/img/icones/save_yellow.svg"> Salvos</a>
+					<li>
+						<div class="icons">
+							<a href="/usuarios" style="margin-right: 10px;"><img src="/img/icones/user.svg" /></a>
+						</div>
+					</li>
+				</div>
+		</nav>
+	</header>
+	<header th:fragment="cabecalho_dois">
+		<nav class="navbar">
+			<a href="/">
+				<img id="logo" src="/img/icones/logo.svg" alt="logo Soul News" />
 
-                <ul class="links">
-                    <li><a href="/"> <img id="estrela" src="/img/icones/casa.svg">Feed notícias</a></li>
-                    <div class="icons">
-                        <a href="/usuarios" style="margin-right: 10px;"><img src="/img/icones/user.svg" /></a>
-                    </div>
-                </ul>
-                <div class="burger_btn"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                <div class="burger_menu">
-                    <li><a href="/"><img id="casa" src="/img/icones/house.svg"> Início</a></li>
-                    <div class="icons">
-                        <a href="/usuarios" style="margin-right: 10px; margin-top: 20px;"><img
-                                src="/img/icones/user.svg" /></a>
-                    </div>
-                    </li>
-                </div>
-            </a>
-        </nav>
-    </header>
-    <header th:fragment="cabecalho_tres">
-        <nav class="navbar">
-            <a href="/">
-                <img id="logo" src="/img/icones/logo.svg" alt="logo Soul News" />
+				<ul class="links">
+					<li><a href="/"> <img id="estrela" src="/img/icones/casa.svg">Feed notícias</a></li>
+					<div class="icons">
+						<a href="/usuarios" style="margin-right: 10px;"><img src="/img/icones/user.svg" /></a>
+					</div>
+				</ul>
+				<div class="burger_btn"><i class="fa fa-bars" aria-hidden="true"></i></div>
+				<div class="burger_menu">
+					<li><a href="/"><img id="casa" src="/img/icones/house.svg"> Início</a></li>
+					<div class="icons">
+						<a href="/usuarios" style="margin-right: 10px; margin-top: 20px;"><img
+								src="/img/icones/user.svg" /></a>
+					</div>
+					</li>
+				</div>
+			</a>
+		</nav>
+	</header>
+	<header th:fragment="cabecalho_tres">
+		<nav class="navbar">
+			<a href="/">
+				<img id="logo" src="/img/icones/logo.svg" alt="logo Soul News" />
 
-                <ul class="links">
-                    <li><a href="/pesquisa-avancada"> <img id="estrela" src="/img/icones/lupa_amarela.svg"> Pesquisas avançadas</a></li>
-                    <li><a href="/"> <img id="estrela" src="/img/icones/casa.svg">Feed notícias</a></li>
-                    <div class="icons">
-                        <a href="/pesquisa-avancada" style="margin-right: 10px;"><img src="/img/icones/user.svg" /></a>
-                    </div>
-                </ul>
+				<ul class="links">
+					<li><a href="/pesquisa-avancada"> <img id="estrela" src="/img/icones/lupa_amarela.svg"> Pesquisas
+							avançadas</a></li>
+					<li><a href="/"> <img id="estrela" src="/img/icones/casa.svg">Feed notícias</a></li>
+					<div class="icons">
+						<a href="/pesquisa-avancada" style="margin-right: 10px;"><img src="/img/icones/user.svg" /></a>
+					</div>
+				</ul>
 
-                <div class="burger_btn"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                <div class="burger_menu">
-                    <li><a href="/"> <img id="estrela" src="/img/icones/lupa_amarela.svg">Pesquisas avançadas</a></li>
-                    <li><a href="/"> <img id="estrela" src="/img/icones/casa.svg"> Início</a></li>
-                    <div class="icons">
-                        <a href="/pesquisa-avancada" style="margin-right: 10px;"><img src="/img/icones/user.svg" /></a>
-                    </div>
-                    </li>
-                </div>
-            </a>
-        </nav>
-    </header>
-    <footer class="footer_container" th:fragment="footer">
-        <section class="perguntas_frequentes_container">
-            <img id="logo_footer" src="/img/icones/logo.svg" alt="logo Soul News" />
-            <a href="/perguntas-frequentes">Perguntas Frequentes</a>
-        </section>
-        <section class="contatos_container">
-            <h1>Entre em contato conosco:</h1>
-            <ul>
-                <li><img src="/img/icones/email.svg" alt="icon email" />
-                    <p> emailexemplo@gmail.com</p>
-                </li>
-                <li><img src="/img/icones/phone.svg" alt="icon celular" />
-                    <p> 9 9999-9999</p>
-                </li>
-                <li><img src="/img/icones/link.svg" alt="icon link" />
-                    <p> Nos envie uma <a href="/enviar-mensagem">mensagem</a></p>
-            </ul>
-    </footer>
-    <script src="/js/main.js"></script>
+				<div class="burger_btn"><i class="fa fa-bars" aria-hidden="true"></i></div>
+				<div class="burger_menu">
+					<li><a href="/"> <img id="estrela" src="/img/icones/lupa_amarela.svg">Pesquisas avançadas</a></li>
+					<li><a href="/"> <img id="estrela" src="/img/icones/casa.svg"> Início</a></li>
+					<div class="icons">
+						<a href="/pesquisa-avancada" style="margin-right: 10px;"><img src="/img/icones/user.svg" /></a>
+					</div>
+					</li>
+				</div>
+			</a>
+		</nav>
+	</header>
+	<footer class="footer_container" th:fragment="footer">
+		<section class="perguntas_frequentes_container">
+			<img id="logo_footer" src="/img/icones/logo.svg" alt="logo Soul News" />
+			<a href="/perguntas-frequentes">Perguntas Frequentes</a>
+		</section>
+		<section class="contatos_container">
+			<h1>Entre em contato conosco:</h1>
+			<ul>
+				<li><img src="/img/icones/email.svg" alt="icon email" />
+					<p> emailexemplo@gmail.com</p>
+				</li>
+				<li><img src="/img/icones/phone.svg" alt="icon celular" />
+					<p> 9 9999-9999</p>
+				</li>
+				<li><img src="/img/icones/link.svg" alt="icon link" />
+					<p> Nos envie uma <a href="/enviar-mensagem">mensagem</a></p>
+			</ul>
+	</footer>
+	<script src="/js/main.js"></script>
 </body>
 
 </html>
