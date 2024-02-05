@@ -26,23 +26,31 @@ public class Noticia {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idNoticia;
-	
-	@Column(nullable = false, length=30)
+
+	@Column(nullable = false, length = 30)
 	private String topico;
 
 	@Column(nullable = false, length = 255, unique = true)
 	private String titulo;
+	
+	@Column(nullable = false)
+	private String caminhoImagem;
 
 	@Column(length = 4000)
 	private String conteudo;
-	
+
 	@Column(nullable = false)
 	private LocalDate dataPublicacao;
-	
-	@Column(nullable = false, length= 30)
+
+	@Column(nullable = false, length = 30)
 	private String categoria;
-	
-	@Column(nullable = false, length= 100)
+
+	@Column(nullable = false, length = 100)
 	private String fonte;
 
+	@Column(nullable = false)
+	private Boolean salvo = false;
+	
+	@Column(nullable = false)
+	private Boolean favorita = false;
 }
