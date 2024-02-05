@@ -47,18 +47,18 @@
             <section class="card_container">
                 <div class="card" th:each="favorita : ${listaFavoritas}">
                     <div class="imagem_noticia_container">
-                        <img th:src="@{'/' + ${favorita.noticiaFav.caminhoImagem}}" alt="Imagem da Notícia">
+                        <img th:src="@{'/' + ${favorita.noticiasFav.caminhoImagem}}" alt="Imagem da Notícia">
                     </div>
-                    <h2 th:text="${favorita.noticiaFav.topico}"></h2>
+                    <h2 th:text="${favorita.noticiasFav.topico}"></h2>
                     <h1>
-                        <a th:text="${favorita.noticiaFav.titulo}">
+                        <a th:text="${favorita.noticiasFav.titulo}">
                         </a>
                     </h1>
                     <div class="card_content">
-                        <div class="resumo" th:text="${favorita.noticiaFav.conteudo}"></div>
+                        <div class="resumo" th:text="${favorita.noticiasFav.conteudo}"></div>
                         <section class="fonte_data_container">
-                            <p th:text="${favorita.noticiaFav.fonte}"></p>
-                            <span th:text="${#temporals.format(favorita.noticiaFav.dataPublicacao)}"></span>
+                            <p th:text="${favorita.noticiasFav.fonte}"></p>
+                            <span th:text="${#temporals.format(favorita.noticiasFav.dataPublicacao)}"></span>
                         </section>
                     </div>
                 </div>
