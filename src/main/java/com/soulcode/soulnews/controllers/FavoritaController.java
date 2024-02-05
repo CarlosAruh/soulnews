@@ -90,7 +90,6 @@ public class FavoritaController {
 	// Update
 	@PostMapping("/favoritas/update")
 	public String updateNoticiasFavoritas(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia,
-			@RequestParam(name = "dataAdicao") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataAdicao,
 			Favorita favorita) {
 
 		try {
@@ -105,7 +104,6 @@ public class FavoritaController {
 
 				existingFavorita.setUsuario(usuario);
 				existingFavorita.setNoticiasFav(noticia);
-				existingFavorita.setDataAdicao(dataAdicao);
 
 				favoritaRepository.save(existingFavorita);
 			}

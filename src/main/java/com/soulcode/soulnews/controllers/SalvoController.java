@@ -34,8 +34,7 @@ public class SalvoController {
 
 	// CREATE
 	@PostMapping("/salvos/create")
-	public String createNoticiaSalvo(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia,
-			Salvo salvo) {
+	public String createNoticiaSalvo(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia, Salvo salvo) {
 		try {
 			Optional<Usuario> usuarioOpt = usuarioRepository.findById(idUsuario);
 			Optional<Noticia> noticiaOpt = noticiaRepository.findById(idNoticia);
@@ -89,9 +88,7 @@ public class SalvoController {
 
 	// Update
 	@PostMapping("/salvos/update")
-	public String updateNoticiasSalvos(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia,
-			@RequestParam(name = "dataAdicao") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataAdicao,
-			Salvo salvo) {
+	public String updateNoticiasSalvos(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia, Salvo salvo) {
 
 		try {
 			Optional<Salvo> existingSalvoOpt = salvoRepository.findById(salvo.getIdSalvo());
@@ -105,7 +102,6 @@ public class SalvoController {
 
 				existingSalvo.setUsuario(usuario);
 				existingSalvo.setNoticiasSalvo(noticia);
-				existingSalvo.setDataAdicao(dataAdicao);
 
 				salvoRepository.save(existingSalvo);
 			}
