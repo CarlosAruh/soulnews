@@ -18,6 +18,29 @@
 
             <section class="titulo_principal_container">
                 <h1>Notícias salvas</h1>
+                <form action="/salvos/create" method="post" class="favoritar_salvas">
+
+                    <select name="idNoticia" required>
+                      <option selected disabled value="">Selecione uma Noticia</option>
+                      <option th:each="noticia : ${listaNoticias}" th:value="${noticia.idNoticia}">
+                        <span th:text="${noticia.categoria}"></span> -
+                        <span th:text="${noticia.titulo}"></span>
+                      </option>
+                    </select>
+            
+                    <select name="idUsuario" required>
+                      <option selected disabled value="">Selecione um usuario</option>
+                      <option
+                        th:each="usuario : ${listaUsuarios}"
+                        th:value="${usuario.idUsuario}"
+                      >
+                        <span th:text="${usuario.nome}"></span> -
+                        <span th:text="${usuario.email}"></span>
+                      </option>
+                    </select>
+            
+                    <button type="submit">Enviar</button>
+                  </form>
             </section>
 
             <hr /> <br /> <br />

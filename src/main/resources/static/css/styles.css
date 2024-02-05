@@ -208,8 +208,42 @@ li {
   cursor: pointer;
 }
 
+
 .form button:hover {
   background: var(background-button-hover);
+}
+
+.favoritar_salvas {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  padding: 4vw;
+  border-radius: 10px;
+}
+
+.favoritar_salvas select {
+  background: none;
+  border: 1px solid var(--color-title-secondary);
+  width: 40%;
+  padding: 0.8vw;
+  margin-bottom: 1vw;
+  box-sizing: border-box;
+  border-radius: 15px;
+  font-size: 1vw;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+.favoritar_salvas button {
+  width: 20%;
+  background-color: var(--color-title-secondary);
+  color: var(--color-text-secondary);
+  padding: 0.8vw;
+  margin-bottom: 1vw;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.2vw;
+  cursor: pointer;
 }
 
 .imagemAtual {
@@ -254,6 +288,7 @@ li {
 
 .titulo_principal_container h1 {
   font-family: Roboto;
+  white-space: nowrap;
   font-weight: bold;
   font-size: calc(1rem + 2vw);
   color: var(--color-title-primary);
