@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Pesquisa</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div th:replace="~{/fragmentos::cabecalho3}"></div>
+        <section>
+            <main class="container_tela_principal">
+                <section class="titulo_principal_container">
+                    <h1>Resultado da pesquisa</h1>
+                </section>
+
+                <hr /> <br /> <br />
+
+                <section class="card_container">
+                    <section class="card" th:each="noticia : ${noticias}">
+                        <div class="imagem_noticia_container">
+                            <img th:src="@{'/' + ${noticia.caminhoImagem}}" alt="Imagem da Notícia">
+                        </div>
+                        <h2 th:text="${noticia.topico}"></h2>
+                        <h1>
+                            <a th:href="'/noticias/'+${noticia.idNoticia}" th:text="${noticia.titulo}">
+                            </a>
+                        </h1>
+                        <div class="card_content">
+                            <div class="resumo" th:text="${noticia.conteudo}"></div>
+                            <section class="fonte_data_container">
+                                <p th:text="${noticia.fonte}"></p>
+                                <span th:text="${#temporals.format(noticia.dataPublicacao)}"></span>
+                            </section>
+                        </div>
+                    </section>
+                </section>
+            </main>
+        </section>
+        <div th:replace="~{/fragmentos::footer}"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes do Empréstimo</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div th:replace="~{/fragmentos::cabecalho}"></div>
+        <main class="container_tela_principal">
+            <h1>Detalhes Noticia</h1>
+            <th>
+                <p>Usuario: <span th:text="${favorita.usuario.nome}"></span></p>
+                <p>Noticia: <span th:text="${favorita.noticiasFav.titulo}"></span></p>
+                <p>Data Adição: <span th:text="${favorita.dataAdicao}"></span></p>
+                <p>Topico: <span th:text="${favorita.noticiasFav.topico}"></span></p>
+                <p>Imagem: <img th:src="${favorita.noticiasFav.caminhoImagem}" alt="Imagem da Notícia"></p>
+                <p>Conteudo: <span th:text="${favorita.noticiasFav.conteudo}"></span></p>
+                <p>Data Publicação: <span th:text="${favorita.noticiasFav.dataPublicacao}"></span></p>
+                <p>Categoria: <span th:text="${favorita.noticiasFav.categoria}"></span></p>
+                <p>Fonte: <span th:text="${favorita.noticiasFav.fonte}"></span></p>
+
+            </th>
+        </main>
+        <div th:replace="~{/fragmentos::footer}"></div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

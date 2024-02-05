@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar notícia - SoulNews</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div th:replace="~{/fragmentos::cabecalho}"></div>
+        <main class="container_tela_principal">
+            <section class="titulo_principal_container">
+                <h1>Edite sua notícia</h1>
+            </section>
+            <hr /> <br /> <br />
+
+            <section class="container_form">
+                <h1>Edite sua notícia</h1>
+                <form action="/noticias/update" method="post" class="form" enctype="multipart/form-data">
+                    <input type="hidden" name="idNoticia" th:value="${noticia.idNoticia}" />
+    
+                    <label for="titulo">Título:</label>
+                    <input th:value="${noticia.titulo}" type="text" name="titulo" id="titulo" maxlength="100" required />
+    
+                    <label for="categoria">Qual a categoria da notícia?</label>
+                    <input th:value="${noticia.categoria}" type="text" name="categoria" id="categoria" maxlength="30"
+                        required></input>
+    
+                    <label for="topico">Qual o topíco da notícia?</label>
+                    <input th:value="${noticia.topico}" type="text" name="topico" id="topico" maxlength="30" required />
+    
+                    <label for="conteudo">Data Publicação:</label>
+                    <input th:value="${noticia.dataPublicacao}" type="date" name="dataPublicacao" id="dataPublicacao"
+                        maxlength="120" />
+    
+                    <label for="fonte">Fonte:</label>
+                    <input th:value="${noticia.fonte}" type="text" name="fonte" id="fonte" maxlength="100" required></input>
+    
+                    <label for="imagem">Imagem Atual:</label>
+                    <img th:src="@{'/' + ${noticia.caminhoImagem}}" alt="Imagem Atual" width="100" height="100" />
+                    <label for="novaImagem">Nova Imagem</label>
+                    <input type="file" name="novaImagem">
+    
+                    <label for="conteudo">Descrição:</label>
+                    <textarea th:text="${noticia.conteudo}" name="conteudo" id="conteudo" class="textarea_container" rows="7"></textarea>
+    
+                    <button type="submit">Salvar</button>
+                </form>
+        </main>
+        <div th:replace="~{/fragmentos::rodape}"></div>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

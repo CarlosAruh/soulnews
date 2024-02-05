@@ -13,35 +13,31 @@
 <body>
   <div class="wrapper">
     <div th:replace="~{/fragmentos::cabecalho}"></div>
-    <main>
-      <h1>Novo usuário</h1>
-      <form class="forms" action="usuarios/create" method="post">
+    <main class="container_tela_principal">
+      <section class="container_form">
+        <h1>Novo usuário</h1>
+        <form class="form" action="usuarios/create" method="post">
 
-        <!-- <label for="usuario">Usuario:<span style="color: red">*</span></label>
-        <input type="text" name="usuario" id="usuario" maxlength="20" required />
+          <label for="nome">Nome:<span style="color: red">*</span></label>
+          <input type="text" name="nome" id="nome" maxlength="100" required />
 
-        <label for="senha">Senha:<span style="color: red">* </span></label>
-        <input type="password" name="senha" id="senha" maxlength="16" required /> -->
+          <label for="email">Email:<span style="color: red">*</span></label>
+          <input type="email" name="email" id="email" maxlength="180">
 
-        <label for="nome">Nome:<span style="color: red">*</span></label>
-        <input type="text" name="nome" id="nome" maxlength="60" required />
+          <label for="dataNascimento">Data de Nascimento:<span style="color: red">*</span></label>
+          <input type="date" name="dataNascimento" id="dataNascimento" required />
 
-        <label for="data_nascimento">Data de Nascimento:<span style="color: red">*</span></label>
-        <input type="date" name="data_nascimento" id="data_nascimento" maxlength="10" required />
+          <label for="telefone">Telefone:<span style="color: red">*</span></label>
+          <input type="tel" name="telefone" id="telefone" maxlength="20" required />
 
-        <label for="email">Email:<span style="color: red">*</span></label>
-        <input type="email" name="email" id="email" maxlength="120">
-
-        <label for="telefone">Telefone:<span style="color: red">*</span></label>
-        <input type="tel" name="telefone" id="telefone" maxlength="42" required />
-
-        <label for="cpf">CPF:<span style="color: red">*</span></label>
-        <input type="text" name="cpf" id="cpf" maxlength="42" required />
+          <label for="cpf">CPF:<span style="color: red">*</span></label>
+          <input type="text" name="cpf" id="cpf" maxlength="11" required />
 
 
-        <p>Campos preenchidos com <span style="color: red">*</span> são obrigatórios. </p>
-        <button type="submit">Salvar</button>
-      </form>
+          <p>Campos preenchidos com <span style="color: red">*</span> são obrigatórios. </p>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
     </main>
     <div th:replace="~{/fragmentos::rodape}"></div>
   </div>

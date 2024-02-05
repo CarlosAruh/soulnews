@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - SoulNews</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div th:replace="~{/fragmentos::cabecalho}"></div>
+        <main class="container_tela_principal">
+            <section class="container_form">
+                <h1>Crie uma notícia</h1>
+
+                <form action="/noticias/create" method="post" class="form" enctype="multipart/form-data">
+
+                    <label for="titulo">Título:</label>
+                    <input type="text" name="titulo" placeholder="Título da manchete" maxlength="100" required />
+
+                    <label for="categoria">Qual a categoria da notícia?</label>
+                    <input type="text" name="categoria" placeholder="Digite a categoria" id="categoria" maxlength="100"
+                        required />
+
+                    <label for="topico">Qual o topíco da notícia?</label>
+                    <input type="text" name="topico" placeholder="Coloque o topíco da notícia" id="topico"
+                        maxlength="100" required />
+
+                    <label for="data">Data de publicação:</label>
+                    <input type="date" name="dataPublicacao" placeholder="Quando a notícia está sendo publicada?"
+                        id="dataPublicacao" maxlength="100" required />
+
+                    <label for="categoria">Fonte:</label>
+                    <input type="text" name="fonte" placeholder="Qual é a fonte dessa notícia?" id="fonte"
+                        maxlength="100" required />
+
+                    <label for="imagem">Imagem:</label>
+                    <input type="file" id="imagemInput" name="imagem"><br />
+                    <input type="hidden" id="caminhoImagem" name="caminhoImagem">
+
+                    <label for="conteudo">Descrição:</label>
+                    <textarea name="conteudo" placeholder="Use esse campo para descrever a notícia" id="conteudo"
+                        rows="6" maxlength="1000" class="textarea_container"></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+        </main>
+        <div th:replace="~{/fragmentos::footer}"></div>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
