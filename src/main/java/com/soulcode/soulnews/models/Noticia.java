@@ -38,7 +38,7 @@ public class Noticia {
 	@Column(nullable = false)
 	private String caminhoImagem;
 
-	@Column(length = 4000)
+	@Column(length = 10000)
 	private String conteudo;
 
 	@Temporal(TemporalType.DATE)

@@ -361,6 +361,10 @@ li {
   padding: 2vw;
 }
 
+.imagem_noticia_container {
+  height: 40%;
+}
+
 .imagem_noticia_container img {
   width: 100%;
   height: 100%;
@@ -521,7 +525,7 @@ button {
 }
 
 /*media queries*/
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
   .card_container {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
@@ -539,8 +543,14 @@ button {
     font-size: 3vw;
   }
 
+  #campo_pesquisa {
+    font-size: calc(0.8rem + 0.6vw);
+    width: 50%;
+    height: 4vh;
+  }
+
   .footer_container {
-    height: 20%;
+    height: 15%;
   }
 }
 
@@ -607,6 +617,10 @@ button {
     width: 40vw;
   }
 
+  .container_form {
+    margin: 4vw 0 5vw 0;
+  }
+
   .salvar_favoritar_icones_container img {
     height: 4vw;
   }
@@ -655,6 +669,10 @@ button {
     padding-bottom: 5vw;
   }
 
+  .container_form {
+    margin: 4vw 0 5vw 0;
+  }
+
   .footer_container {
     height: 18vh;
     align-items: center;
@@ -667,6 +685,12 @@ button {
   .perguntas_frequentes_container a {
     font-size: 0.7rem;
     width: 30vw;
+  }
+
+  #campo_pesquisa {
+    font-size: calc(0.8rem + 0.6vw);
+    width: 50%;
+    height: 5vh;
   }
 
   .contatos_container h1 {
@@ -715,7 +739,7 @@ button {
   }
 }
 
-@media (max-width: 486px) {
+@media (max-width: 550px) {
 
   header {
     height: 10vw;
@@ -771,6 +795,11 @@ button {
   .card {
     width: 85vw;
     margin-bottom: 20px;
+    margin-left: 10px;
+  }
+
+  .container_form {
+    margin: 4vw 0 5vw 0;
   }
 
   #logo {
@@ -780,6 +809,8 @@ button {
   #campo_pesquisa {
     margin-top: 2%;
     width: 55%;
+    font-size: calc(0.5rem + 0.6vw);
+    height: 4vh;
   }
 
   .footer_container {
@@ -787,7 +818,6 @@ button {
     flex-direction: column;
     height: auto;
     padding: 4% 1%;
-    margin-top: 10vw;
   }
 
   .contatos_container img {
