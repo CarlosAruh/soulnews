@@ -22,11 +22,11 @@ public class UsuarioController {
 
 	// CREATE
 	@GetMapping("/cadastro")
-	public ModelAndView paginaCadastro(){
+	public ModelAndView getMethodName() {
 		ModelAndView mv = new ModelAndView("cadastro");
 		return mv;
 	}
-
+	
 	@PostMapping("/usuarios/create")
 	public String createUsuario(Usuario usuario) {
 		try {

@@ -33,19 +33,20 @@ public class SalvoController {
 	private NoticiaRepository noticiaRepository;
 
 	// CREATE
+	
 	@PostMapping("/salvos/create")
-	public String createNoticiaSalvo(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia,
-			Salvo salvo) {
+	public String salvarNoticia(@RequestParam Integer idNoticia, Salvo salvo) {
 		try {
-			Optional<Usuario> usuarioOpt = usuarioRepository.findById(idUsuario);
 			Optional<Noticia> noticiaOpt = noticiaRepository.findById(idNoticia);
-			if (usuarioOpt.isPresent() && noticiaOpt.isPresent()) {
-				Usuario usuario = usuarioOpt.get();
+			if (noticiaOpt.isPresent()) {
 				Noticia noticia = noticiaOpt.get();
-
-				salvo.setUsuario(usuario);
-				salvo.setNoticiasSalvo(noticia);
-
+				if (noticia.getSalvo()) {
+					noticia.setSalvo(false);
+				} else {
+					noticia.setSalvo(true);
+				}
+				System.out.println("noticia");
+				System.out.println(noticia.getSalvo());
 				salvoRepository.save(salvo);
 			}
 
@@ -54,22 +55,17 @@ public class SalvoController {
 		}
 		return "redirect:/salvos";
 	}
-
-	// READ
+	// // READ
 	@GetMapping("/salvos")
-	public ModelAndView paginasSalvos() {
-		List<Salvo> salvos = salvoRepository.findAll();
-		List<Usuario> usuarios = usuarioRepository.findAll();
-		List<Noticia> noticias = noticiaRepository.findAll();
+	public ModelAndView noticiasSalvas() {
+		List<Noticia> noticias = noticiaRepository.searchBySalvo();
 
 		ModelAndView mv = new ModelAndView("salvos");
-		mv.addObject("listaSalvos", salvos);
-		mv.addObject("listaUsuarios", usuarios);
-		mv.addObject("listaNoticias", noticias);
+		mv.addObject("listaSalvos", noticias);
 
 		return mv;
 	}
-
+	
 	@GetMapping("/salvos/{id}")
 	public ModelAndView paginaDetalheSalvos(@PathVariable Integer id) {
 		Optional<Salvo> salvoOpt = salvoRepository.findById(id);
@@ -116,25 +112,25 @@ public class SalvoController {
 		return "redirect:/salvos";
 	}
 
-	@GetMapping("/salvos/{id}/edit")
-	public ModelAndView paginaAtualizarSalvo(@PathVariable Integer id) {
-		Optional<Salvo> salvoOpt = salvoRepository.findById(id);
-		List<Usuario> usuarios = usuarioRepository.findAll();
-		List<Noticia> noticias = noticiaRepository.findAll();
+	// @GetMapping("/salvos/{id}/edit")
+	// public ModelAndView paginaAtualizarSalvo(@PathVariable Integer id) {
+	// 	Optional<Salvo> salvoOpt = salvoRepository.findById(id);
+	// 	List<Usuario> usuarios = usuarioRepository.findAll();
+	// 	List<Noticia> noticias = noticiaRepository.findAll();
 
-		if (salvoOpt.isPresent()) {
-			Salvo salvo = salvoOpt.get();
-			ModelAndView mv = new ModelAndView("salvo-atualizar");
-			mv.addObject("salvo", salvo);
-			mv.addObject("listaUsuarios", usuarios);
-			mv.addObject("listaNoticias", noticias);
-			return mv;
-		} else {
-			ModelAndView mvErro = new ModelAndView("erro");
-			mvErro.addObject("msg", "Salvo não encontrado. Impossível de editar.");
-			return mvErro;
-		}
-	}
+	// 	if (salvoOpt.isPresent()) {
+	// 		Salvo salvo = salvoOpt.get();
+	// 		ModelAndView mv = new ModelAndView("salvo-atualizar");
+	// 		mv.addObject("salvo", salvo);
+	// 		mv.addObject("listaUsuarios", usuarios);
+	// 		mv.addObject("listaNoticias", noticias);
+	// 		return mv;
+	// 	} else {
+	// 		ModelAndView mvErro = new ModelAndView("erro");
+	// 		mvErro.addObject("msg", "Salvo não encontrado. Impossível de editar.");
+	// 		return mvErro;
+	// 	}
+	// }
 
 	// Delete
 	@PostMapping("/salvos/delete")

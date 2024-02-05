@@ -16,6 +16,13 @@ public class HomeController {
 	@Autowired
 	private NoticiaRepository noticiaRepository;
 
+    @GetMapping("/grcmt")
+    public ModelAndView paginaGerenciamento() {
+        ModelAndView mv = new ModelAndView("grcmt");
+        return mv;
+    }
+    
+
 	@GetMapping("/")
 	public ModelAndView paginaHome(Noticia noticia) {
 		List<Noticia> noticias = noticiaRepository.findAll();
@@ -24,11 +31,34 @@ public class HomeController {
 		return mv;
 	}
 
-	@GetMapping("/grcmt")
-	public ModelAndView paginaGerenciamento() {
-		ModelAndView mv = new ModelAndView("grcmt");
-		return mv;
-	}
-	
-	
+	@GetMapping("/criar-noticia")
+    public String paginaCriarNoticia() {
+        return "criar-noticia";
+    }
+
+	@GetMapping("/enviar-mensagem")
+    public String paginaEnviarMensagem() {
+        return "enviar-mensagem";
+    }
+
+	@GetMapping("/perguntas-frequentes")
+    public String paginaPerguntasFrequentes() {
+        return "perguntas-frequentes";
+    }
+
+	@GetMapping("/erro")
+    public String paginaDeErro() {
+        
+		return "erro";
+    }
+
+	@GetMapping("/noticia-pesquisa")
+    public String paginaNoticiaPesquisa() {
+        return "noticia-pesquisa"; 
+    }
+
+	@GetMapping("/pesquisa-avancada")
+    public String paginaPesquisaAvancada() {
+        return "pesquisa-avancada"; 
+    }
 }

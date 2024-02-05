@@ -34,18 +34,18 @@ public class FavoritaController {
 
 	// CREATE
 	@PostMapping("/favoritas/create")
-	public String createNoticiaFavorita(@RequestParam Integer idUsuario, @RequestParam Integer idNoticia,
-			Favorita favorita) {
+	public String favoritarNoticia(@RequestParam Integer idNoticia, Favorita favorita) {
 		try {
-			Optional<Usuario> usuarioOpt = usuarioRepository.findById(idUsuario);
 			Optional<Noticia> noticiaOpt = noticiaRepository.findById(idNoticia);
-			if (usuarioOpt.isPresent() && noticiaOpt.isPresent()) {
-				Usuario usuario = usuarioOpt.get();
+			if (noticiaOpt.isPresent()) {
 				Noticia noticia = noticiaOpt.get();
-
-				favorita.setUsuario(usuario);
-				favorita.setNoticiasFav(noticia);
-
+				if (noticia.getFavorita()) {
+				noticia.setFavorita(false);
+				System.out.println(noticia.getFavorita());
+				} else {
+				noticia.setFavorita(true);
+				System.out.println(noticia.getFavorita());
+				}
 				favoritaRepository.save(favorita);
 			}
 
@@ -57,15 +57,11 @@ public class FavoritaController {
 
 	// READ
 	@GetMapping("/favoritas")
-	public ModelAndView paginasFavoritas() {
-		List<Favorita> favoritas = favoritaRepository.findAll();
-		List<Usuario> usuarios = usuarioRepository.findAll();
-		List<Noticia> noticias = noticiaRepository.findAll();
+	public ModelAndView paginaFavoritas() {
+		List<Noticia> noticias = noticiaRepository.searchByFavorita();
 
 		ModelAndView mv = new ModelAndView("favoritas");
-		mv.addObject("listaFavoritas", favoritas);
-		mv.addObject("listaUsuarios", usuarios);
-		mv.addObject("listaNoticias", noticias);
+		mv.addObject("listaFavoritas", noticias);
 
 		return mv;
 	}
